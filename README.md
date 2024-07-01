@@ -1,10 +1,10 @@
 # MSC-3 Team project
+
 # Advanced JavaScript and TypeScript: Tools and Best Practices
 
 ## Vite Vanilla JS Template
 
 Initially built for team use, I created this template for starting a new project with Vite.js and Vanilla Javascript. It is already set up with standard development tools like ESLint and Prettier for easy code formatting and linting, with Vite for a robust, modern build process.
-
 
 ## Dependencies
 
@@ -73,17 +73,18 @@ npm run buildpreview
 ├── src                     # Source code
 │   ├── assets              # General assets for your project
 │   │   ├── images          # Store your images here
-│   ├── components          # The HTML reusable blocks of the user interface
+│   │   ├── icons           # Store your svg files here
 │   ├── js                  # Javascript files of your project
-│   ├── pages               # Pages for your project
 │   ├── styles              # CSS styles for your project
+│   ├── templates           # The HTML reusable blocks of the user interface
+│   ├── favorites.html      # Favorites page for your project
+│   ├── index.html          # Home page for your project
 ├── .editorconfig           # Configuration for the EditorConfig plugin
 ├── .eslintignore           # Files to be ignored by ESLint
 ├── .eslintrc.json          # Configuration for ESLint
 ├── .gitignore              # Files and folders to be ignored by Git
 ├── .prettierignore         # Files to be ignored by Prettier
 ├── .prettierrc             # Configuration for Prettier
-├── index.html              # The HTML file for your project
 ├── LICENSE                 # The license for your project
 ├── package-lock.json       # Lockfile for your project's dependencies
 ├── package.json            # Defines your project and its dependencies
