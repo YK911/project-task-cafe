@@ -6,6 +6,7 @@
   /* Color palette */
   /** #f4f4f4: Main background | subtitles | secondary text */
   --cl-primary-light: 244 244 244;
+  --transition: 300ms ease-in;
 
   /** #242424 Main text | socials icons fill */
   --cl-primary-dark: 36 36 36;
