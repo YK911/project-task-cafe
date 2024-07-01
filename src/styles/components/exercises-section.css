@@ -1,0 +1,70 @@
+.exercises-header {
+  color: #242424;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.56px;
+  margin-bottom: 20px;
+}
+
+.exercises-filter-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.exercises-filter-button:focus {
+  outline: none;
+}
+
+.exercises-filters {
+  display: flex;
+  justify-content: flex-start;
+
+  @media only screen and (min-width: 768px) {
+    justify-content: flex-end;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    justify-content: flex-end;
+  }
+}
+
+.exercises-filter-list {
+  display: flex;
+  gap: 20px;
+}
+
+.exercises-filter-button {
+  color: rgba(36, 36, 36, 0.6);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.exercises-filter-list li {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.exercises-filter-list li.exercises-filter-item-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: #242424;
+}
