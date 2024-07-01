@@ -1,33 +1,27 @@
 {
-  "name": "vite-vanilla-js-template",
-  "description": "ViteJS starter template for vanilla JavaScript with some basic dependencies.",
+  "name": "project-task-cafe",
+  "description": "Template for module Advanced JavaScript and TypeScript",
   "version": "1.0.0",
   "type": "module",
-  "keywords": [
-    "vanilla",
-    "javascript",
-    "template",
-    "boilerplate",
-    "boilerplate-template",
-    "postcss",
-    "eslint",
-    "prettier",
-    "scaffold",
-    "scaffold-template",
-    "vite",
-    "vitejs",
-    "vite-template",
-    "vitejs-template"
-  ],
   "scripts": {
     "dev": "vite --host --open",
     "lint": "eslint --ext .js ./",
     "lint:fix": "eslint --fix --ext .js ./",
     "format": "prettier --write \"./**/*.{js,jsx,json,css}\"",
-    "build": "vite build",
+    "build": "vite build --base=/project-task-cafe/",
     "preview": "vite preview --open",
     "buildpreview": "vite build && vite preview --open"
   },
+  "keywords": [
+    "javascript",
+    "template",
+    "postcss",
+    "eslint",
+    "prettier",
+    "vite"
+  ],
+  "author": "Yaroslav Kosytsia <yaroslavkosytsia@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.3",
