@@ -1,0 +1,13 @@
+/* #region Variables */
+@import url('./utils/variables.css');
+/* #endregion */
+
+/* #region Base */
+@import url('./base/common.css');
+@import url('./base/container.css');
+/* #endregion */
+
+/* #region Components */
+@import url('./components/header.css');
+@import url('./components/footer.css');
+/* #endregion */

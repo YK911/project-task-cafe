@@ -1,0 +1,16 @@
+body {
+  font-family: var(--font-family, 'sans-serif');
+  color: rgba(36 36 36 / 100%);
+  background: rgb(244 244 244);
+}
+section {
+  padding: 40px 0;
+}
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: 2px underline currentColor;
+    text-underline-position: under;
+  }
+}

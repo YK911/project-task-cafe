@@ -1,0 +1,9 @@
+.footer {
+  padding: 40px 0 10px;
+  color: #f4f4f4;
+  background: #242424;
+
+  @media only screen and (min-width: 768px) {
+    padding: 64px 0 16px;
+  }
+}
