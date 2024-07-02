@@ -83,11 +83,12 @@
       .subscription-title {
         color: var(--color-white);
         letter-spacing: -0.02em;
-        font-family: 'DM Sans';
-        font-style: normal;
-        font-weight: 400;
         font-size: 38px;
         line-height: 1.16;
+
+        .italic-accent {
+          font-style: italic;
+        }
 
         @media only screen and (min-width: 768px) {
           font-size: 56px;
@@ -107,9 +108,6 @@
         .subscription-form-title {
           width: 100%;
           max-width: 434px;
-          font-family: 'DM Sans';
-          font-style: normal;
-          font-weight: 400;
           font-size: 14px;
           line-height: 1.29;
           color: var(--color-white);
@@ -147,9 +145,6 @@
           padding: 12px 0px;
           border-radius: 30px;
           background-color: var(--color-white);
-          font-family: 'DM Sans';
-          font-style: normal;
-          font-weight: 400;
           font-size: 14px;
           line-height: 1.29;
           color: var(--color-black);
@@ -182,9 +177,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.02em;
@@ -197,12 +189,12 @@
       justify-content: space-between;
 
       .year-copyright-text {
-        min-width: 352px;
-
         @media only screen and (min-width: 1440px) {
+          min-width: 352px;
           flex-shrink: 1;
         }
       }
+
       @media only screen and (min-width: 1440px) {
         min-width: 1062px;
       }
