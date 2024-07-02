@@ -5,7 +5,7 @@ const formEmail = form.querySelector('input[name="email"]');
 const formBtn = document.getElementById('subscribtionFormBtn');
 
 const isValidEmail = (email) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   return emailRegex.test(email);
 };
 
