@@ -3,16 +3,22 @@
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --base-font: 'DM Sans', var(--safe-fonts);
 
-  /* Colors */
-  --color-light: #fdfaed;
-  --color-dark: #3e1c0a;
-  --color-primary: #db9825;
-  --color-primary-hover: #c1761e;
-  --color-secondary: #a1571c;
-  --color-logo-shadow: #646cffaa;
-  --color-logo-vanilla-shadow: #f7df1eaa;
-  --color-button-light: #f3e5ab;
-  --color-button-dark: #db9825;
+  /* Color palette */
+  /** #f4f4f4: Main background | subtitles | secondary text */
+  --cl-primary-light: 244 244 244;
+
+  /** #242424 Main text | socials icons fill */
+  --cl-primary-dark: 36 36 36;
+
+  --cl-secondary-light: 198 205 209; /** #c6cdd1: Footer text */
+  --cl-secondary-dark: 17 17 17; /** #111111: Exercises cards overlay */
+
+  --cl-white: 255 255 255; /** #ffffff: Cards text | background  */
+  --cl-dark: 4 4 4; /** #040404: Popup exercise backdrop | overlay */
+
+  /* Additional colors */
+  --cl-gray: 212 212 212; /** #d4d4d4: Inactive pagination */
+  --fill-star: 238 161 12; /** #eea10c: Rating stars */
 
   /* Radiuses */
   /* !Radius value 12px excluded for consistency */

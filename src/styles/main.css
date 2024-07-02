@@ -5,6 +5,7 @@
 
 /* #region Base */
 @import url('./base/common.css');
+@import url('./base/typography.css');
 @import url('./base/container.css');
 /* #endregion */
 
