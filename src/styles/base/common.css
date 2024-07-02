@@ -1,5 +1,5 @@
 body {
-  font-family: var(--font-family, 'sans-serif');
+  font-family: 'DM Sans', var(--base-font);
   color: rgba(36 36 36 / 100%);
   background: rgb(244 244 244);
 }

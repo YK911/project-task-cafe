@@ -1,7 +1,8 @@
 @import '../../node_modules/modern-normalize/modern-normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap');
 
-/* #region Variables */
+/* #region Utils */
+@import url('./utils/fonts.css');
 @import url('./utils/variables.css');
 /* #endregion */
 
