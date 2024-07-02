@@ -24,3 +24,7 @@ section {
     padding: 64px 0 132px;
   }
 }
+
+button {
+  cursor: pointer;
+}
