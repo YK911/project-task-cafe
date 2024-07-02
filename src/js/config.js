@@ -1,0 +1,2 @@
+export const MOBILE_FILTER_ITEMS_QTY = 9;
+export const REST_DISPLAY_FITTER_ITEMS_QTY = 12;

@@ -1,9 +1,8 @@
 import axios from 'axios';
-
-const FILTER_ITEM_CATEGORIES_URL =
-  'https://your-energy.b.goit.study/api/filters';
-const MOBILE_FILTER_ITEMS_QTY = 9;
-const REST_DISPLAY_FITTER_ITEMS_QTY = 12;
+import {
+  MOBILE_FILTER_ITEMS_QTY,
+  REST_DISPLAY_FITTER_ITEMS_QTY,
+} from './config';
 
 async function getFilterItemCategories(filter, page = 1, limit = 12) {
   const options = {
@@ -20,7 +19,10 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
     return JSON.parse(storedValue);
   }
 
-  const result = await axios.get(FILTER_ITEM_CATEGORIES_URL, options);
+  const result = await axios.get(
+    'https://your-energy.b.goit.study/api/filters',
+    options,
+  );
   const { data } = result;
 
   if (data) {
