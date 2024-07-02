@@ -180,7 +180,7 @@
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.02em;
-    color: var(--cl-secondary-light);
+    color: rgb(var(--cl-secondary-light));
 
     .privacy-copyright-container {
       display: flex;
