@@ -209,4 +209,37 @@
   @media only screen and (min-width: 768px) {
     padding: 64px 0 16px;
   }
+
+  .scroll-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(var(--cl-primary-dark));
+    cursor: pointer;
+    transition: var(--transition);
+    transition-property: width, height;
+
+    .scroll-icon {
+      transition: var(--transition);
+      transition-property: width, height;
+      fill: rgb(var(--cl-primary-light));
+    }
+  }
+
+  .scroll-btn:hover,
+  .scroll-btn:focus {
+    width: 100px;
+    height: 100px;
+
+    .scroll-icon {
+      width: 33px;
+      height: 33px;
+    }
+  }
 }
