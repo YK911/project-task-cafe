@@ -1,17 +1,27 @@
 body {
-  font-family: var(--font-family, 'sans-serif');
-  color: rgba(36 36 36 / 100%);
-  background: rgb(244 244 244);
-}
-section {
-  padding: 40px 0;
+  font-family: 'DM Sans', var(--base-font);
+  color: rgb(var(--cl-primary-dark));
+  background: rgb(var(--cl-primary-light));
+
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.33;
+  }
 }
 
-a {
-  &:hover,
-  &:focus {
-    text-decoration: 2px underline currentColor;
-    text-underline-position: under;
+section {
+  padding: 40px 0 80px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 64px 0 100px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    padding: 64px 0 132px;
   }
 }
 
