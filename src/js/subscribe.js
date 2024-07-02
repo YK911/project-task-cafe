@@ -37,6 +37,7 @@ const subscribe = async (e) => {
 
   try {
     formBtn.disabled = true;
+
     const response = await axios.post(
       'https://your-energy.b.goit.study/api/subscription',
       JSON.stringify({ email: formEmail.value.trim() }),
@@ -46,16 +47,28 @@ const subscribe = async (e) => {
         },
       },
     );
-    if (response.status === 201) {
-      form.reset();
-      console.log('Success:', response.status, response.statusText);
-    } else {
-      console.log('Server Error:', response.status, response.statusText);
-    }
+
+    form.reset();
+    console.log('Successful operation:', response.status, response.statusText);
   } catch (err) {
-    console.log('Error:', err.message);
-  } finally {
-    formBtn.disabled = false;
+    if (err.response) {
+      if (err.response.status === 409) {
+        form.reset();
+        console.log(
+          'Subscription already exists:',
+          err.response.status,
+          err.response.statusText,
+        );
+      } else {
+        console.log(
+          'Server Error:',
+          err.response.status,
+          err.response.statusText,
+        );
+      }
+    } else {
+      console.log('Error:', err.message);
+    }
   }
 };
 
