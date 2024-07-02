@@ -19,6 +19,24 @@
   --title-color: rgba(244, 244, 244, 0.4);
   --title-secondary-color: rgba(36, 36, 36, 0.4);
   --frame-color: rgba(36, 36, 36, 0.1);
+  --transition: 300ms ease-in;
+
+  /* Color palette */
+  /** #f4f4f4: Main background | subtitles | secondary text */
+  --cl-primary-light: 244 244 244;
+
+  /** #242424 Main text | socials icons fill */
+  --cl-primary-dark: 36 36 36;
+
+  --cl-secondary-light: 198 205 209; /** #c6cdd1: Footer text */
+  --cl-secondary-dark: 17 17 17; /** #111111: Exercises cards overlay */
+
+  --cl-white: 255 255 255; /** #ffffff: Cards text | background  */
+  --cl-dark: 4 4 4; /** #040404: Popup exercise backdrop | overlay */
+
+  /* Additional colors */
+  --cl-gray: 212 212 212; /** #d4d4d4: Inactive pagination */
+  --fill-star: 238 161 12; /** #eea10c: Rating stars */
 
   /* Radiuses */
   /* !Radius value 12px excluded for consistency */
