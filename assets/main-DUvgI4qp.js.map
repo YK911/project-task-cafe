@@ -1,1 +1,0 @@
-{"version":3,"file":"main-DUvgI4qp.js","sources":["../../src/js/main.js"],"sourcesContent":["import 'the-new-css-reset/css/reset.css';\nimport '../styles/main.css';\n\nconsole.log('Working ✨');\n"],"names":[],"mappings":"muBAGA,QAAQ,IAAI,WAAW"}
