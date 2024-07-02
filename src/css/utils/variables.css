@@ -10,4 +10,10 @@
   --color-logo-vanilla-shadow: #f7df1eaa;
   --color-button-light: #f3e5ab;
   --color-button-dark: #db9825;
+  --primary-color: #242424;
+  --tran-duration: 500ms ease-in-out;
+  --tran-icon: 300ms ease-in-out;
+  --title-color: rgba(244, 244, 244, 0.4);
+  --title-secondary-color: rgba(36, 36, 36, 0.4);
+  --frame-color: rgba(36, 36, 36, 0.1);
 }

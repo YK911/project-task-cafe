@@ -1,28 +1,25 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>YOUR ENERGY | Favorites page</title>
-    <script defer type="module" src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
-  <body>
-    <!-- Custom tag for html-templating -->
-    <template
-      file="/templates/header.html"
-      home-page-path="./index.html"
-      fav-page-path="./favorites.html"
-    />
+  <body class="favorites">
+    <template file="/partials/header.html" />
 
     <main>
       <template
-        file="/templates/favorites-section.html"
+        file="/partials/favorites-section.html"
         text="Favorites page"
       />
     </main>
 
-    <template file="/templates/footer.html" />
+    <template file="/partials/footer.html" />
+    <script type="module" src="./js/favorites.js"></script>
   </body>
 </html>

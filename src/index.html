@@ -1,28 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>YOUR ENERGY | Home page</title>
-    <script defer type="module" src="/js/main.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
-  <body>
-    <!-- Custom tag for html-templating -->
-    <!-- Use attribute named file to define to template -->
-    <template
-      file="/templates/header.html"
-      home-page-path="./index.html"
-      fav-page-path="./favorites.html"
-    />
+  <body class="homepage">
+    <template file="/partials/header.html" />
 
     <main>
-      <!-- We can define props for templates -->
-      <template file="/templates/hero-section.html" text="Home page" />
-      <template file="/templates/exercises-section.html" />
+      <template file="/partials/hero-section.html" text="Home page" />
+      <template file="/partials/exercises-section.html" />
     </main>
 
-    <template file="/templates/footer.html" />
+    <template file="/partials/footer.html" />
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

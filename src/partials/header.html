@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container header-wrapper">
+    <a class="logo on-hover js-logo" href="/src/index.html" aria-label="your energy logo">
+      <svg class="main-logo">
+        <use href="../img/main-logo.svg#main-logo"></use>
+      </svg>
+    </a>
+
+    <template file="partials/ui/header-toggle-bar.html" />
+
+    <div class="socials">
+      <template file="partials/ui/socials-list.html" />
+    </div>
+
+    <button class="menu-btn on-hover js-open-menu" aria-controls="mob-menu" aria-label="Open menu button">
+      <svg class="menu-icon" width="32" height="32">
+        <use href="../img/icons.svg#icon-burger"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="backdrop is-hidden js-menu-backdrop">
+  <div class="menu-container js-menu-container" id="mob-menu">
+    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
+      <svg class="modal-btn-icon" width="32" height="32">
+        <use href="../img/icons.svg#menu-close"></use>
+      </svg>
+    </button>
+
+    <div class="menu-wrapper menu-main">
+      <ul class="menu-ul js-menu-link list">
+        <li class="menu-li on-hover">
+          <a class="menu-link" href="/src/index.html" aria-label="Go to Home section">Home</a>
+        </li>
+        <li class="menu-li on-hover">
+          <a class="menu-link" href="/src/favorites.html" aria-label="Go to Favorites section">Favorites</a>
+        </li>
+      </ul>
+
+      <div class="menu-wrapper">
+        <template file="partials/ui/socials-list.html" />
+      </div>
+    </div>
+  </div>
+</div>

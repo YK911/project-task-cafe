@@ -7,10 +7,17 @@ section {
   padding: 40px 0;
 }
 
-a {
+/* a {
   &:hover,
   &:focus {
     text-decoration: 2px underline currentColor;
     text-underline-position: under;
   }
+} */
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+  fill: currentColor;
 }
