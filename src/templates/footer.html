@@ -1,5 +1,66 @@
 <footer class="footer">
   <div class="container">
-    <p>Footer content</p>
+    <div class="upper-container">
+      <div class="links-container">
+        <div class="logo-container">
+          <a href="./index.html" class="logo" aria-label="Main Page">
+            <svg width="132" height="24">
+              <use href="assets/icons.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+
+        <template file="templates/socials.html" modifier="footer-socials" />
+      </div>
+      <div class="subscription-container">
+        <h2 class="subscription-title">
+          Transforming your <span class="italic-accent">body</span> shape with
+          us
+        </h2>
+        <form class="subscription-form" id="subscribtionForm">
+          <h3 class="subscription-form-title">
+            Subscribe and learn about new exercises!
+          </h3>
+          <input
+            class="subscription-form-email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <button
+            class="subscription-form-btn"
+            type="submit"
+            id="subscribtionFormBtn"
+            disabled
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="rights-container">
+      <p class="rights-text">Your Energy. All rights reserved.</p>
+      <div class="privacy-copyright-container">
+        <div>
+          <a
+            class="rights-link"
+            href="#"
+            target="_blank"
+            rel="noopener norefferer"
+            >Privacy Policy</a
+          >
+          &sol;
+          <a
+            class="rights-link"
+            href="#"
+            target="_blank"
+            rel="noopener norefferer"
+            >Terms of Service</a
+          >
+        </div>
+        <p class="year-copyright-text">&copy;2023</p>
+      </div>
+    </div>
   </div>
 </footer>

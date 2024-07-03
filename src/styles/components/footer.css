@@ -1,9 +1,183 @@
 .footer {
   padding: 40px 0 10px;
-  color: #f4f4f4;
-  background: #242424;
+  color: rgb(var(--cl-primary-light));
+  background: rgb(var(--cl-primary-dark));
 
   @media only screen and (min-width: 768px) {
     padding: 64px 0 16px;
+  }
+
+  .upper-container {
+    display: flex;
+    row-gap: 40px;
+    column-gap: 114px;
+    flex-direction: column;
+    margin-bottom: 120px;
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      margin-bottom: 64px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      column-gap: 158px;
+      margin-bottom: 70px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 32px;
+      }
+
+      .logo {
+        fill: rgb(var(--cl-primary-light));
+      }
+    }
+
+    .footer-socials {
+      --color-icon: rgb(var(--cl-primary-light) / 80%);
+      --color-icon-hover: rgb(var(--cl-primary-dark) / 80%);
+      --color-bg: transparent;
+      --color-bg-hover: rgb(var(--cl-primary-light));
+      --color-frame: rgb(var(--cl-primary-light) / 10%);
+      --color-frame-hover: transparent;
+    }
+
+    .subscription-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        gap: 32px;
+      }
+
+      @media only screen and (min-width: 1440px) {
+        min-width: 1062px;
+        flex-direction: row;
+        gap: 115px;
+      }
+
+      .subscription-title {
+        color: rgb(var(--cl-primary-light));
+        letter-spacing: -0.02em;
+        font-size: 38px;
+        line-height: 1.16;
+
+        .italic-accent {
+          font-style: italic;
+        }
+
+        @media only screen and (min-width: 768px) {
+          font-size: 56px;
+          line-height: 1.07;
+        }
+      }
+
+      .subscription-form {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+
+        @media only screen and (min-width: 768px) {
+          min-width: 352px;
+        }
+
+        .subscription-form-title {
+          width: 100%;
+          max-width: 434px;
+          font-size: 14px;
+          line-height: 1.29;
+          color: rgb(var(--cl-primary-light));
+
+          @media only screen and (min-width: 768px) {
+            font-size: 18px;
+            line-height: 1.33;
+          }
+        }
+
+        .subscription-form-email {
+          width: 100%;
+          max-width: 352px;
+          padding: 12px 14px;
+          border-radius: 30px;
+          border: 1px solid rgb(var(--cl-primary-light));
+          background-color: rgb(var(--cl-primary-dark));
+          color: rgb(var(--cl-primary-light) / 60%);
+          font-size: 14px;
+          line-height: 1.29;
+
+          @media only screen and (min-width: 768px) {
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+
+        .subscription-form-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          max-width: 352px;
+          height: 48px;
+          padding: 12px 0px;
+          border-radius: 30px;
+          background-color: rgb(var(--cl-primary-light));
+          font-size: 14px;
+          line-height: 1.29;
+          color: rgb(var(--cl-primary-dark));
+          border: none;
+          transition: var(--transition);
+          transition-property: color, background-color, border;
+
+          @media only screen and (min-width: 768px) {
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+
+        .subscription-form-btn:hover,
+        .subscription-form-btn:focus {
+          color: rgb(var(--cl-primary-light));
+          background-color: rgb(var(--cl-primary-dark));
+          border: 1px solid rgb(var(--cl-primary-light));
+        }
+      }
+    }
+  }
+
+  .rights-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+    color: rgb(var(--cl-secondary-light));
+
+    .privacy-copyright-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 434px;
+
+      .year-copyright-text {
+        @media only screen and (min-width: 1440px) {
+          min-width: 352px;
+          flex-shrink: 1;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        min-width: 1062px;
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }

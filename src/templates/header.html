@@ -1,6 +1,31 @@
 <header class="header">
-  <div class="container">
-    <a href="{=$home-page-path}">Home page</a>
-    <a href="{=$fav-page-path}">Favorites page</a>
+  <div class="container header-container">
+    <a
+      class="logo on-hover js-logo"
+      href="./index.html"
+      aria-label="your energy logo"
+    >
+      <svg class="logo-icon" width="132" height="24">
+        <use href="./assets/icons.svg#logo"></use>
+      </svg>
+    </a>
+
+    <template
+      file="templates/navigation.html"
+      home-active="{=$home-active}"
+      fav-active="{=$fav-active}"
+    />
+
+    <template file="templates/socials.html" modifier="header-socials" />
+
+    <button
+      class="menu-toggle on-hover js-open-menu"
+      aria-controls="mob-menu"
+      aria-label="Open menu button"
+    >
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="./assets/icons.svg#burger-menu"></use>
+      </svg>
+    </button>
   </div>
 </header>
