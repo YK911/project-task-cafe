@@ -31,3 +31,7 @@ svg {
   vertical-align: top;
   fill: currentColor;
 }
+
+button {
+  cursor: pointer;
+}

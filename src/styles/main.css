@@ -6,6 +6,7 @@
 
 /* #region Base */
 @import url('./base/common.css');
+@import url('./base/visually-hidden.css');
 @import url('./base/typography.css');
 @import url('./base/container.css');
 /* #endregion */
@@ -23,4 +24,6 @@
 @import url('./components/exercises/category.css');
 @import url('./components/exercises/blockquote.css');
 @import url('./components/footer.css');
+@import url('./components/modal.css');
+@import url('./components/rating-form.css');
 /* #endregion */
