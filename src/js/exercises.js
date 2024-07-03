@@ -34,6 +34,36 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
   return data;
 }
 
+async function getCategoryExercises(category, page = 1, limit = 12) {
+  const options = {
+    params: {
+      limit,
+      page,
+    },
+  };
+
+  options.params[category.filter] = category.name;
+
+  const stringifiedSearch = JSON.stringify(options);
+  const storedValue = sessionStorage.getItem(stringifiedSearch);
+
+  if (storedValue) {
+    return JSON.parse(storedValue);
+  }
+
+  const result = await axios.get(
+    'https://your-energy.b.goit.study/api/exercises',
+    options,
+  );
+  const { data } = result;
+
+  if (data) {
+    sessionStorage.setItem(stringifiedSearch, JSON.stringify(data));
+  }
+
+  return data;
+}
+
 function getItemsPerPage() {
   const viewportWidth = window.innerWidth;
 
@@ -56,9 +86,10 @@ function drawCategoriesList(containerSelector, categories) {
   const categoriesList = document.createElement('ul');
 
   categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, (c) =>
-      console.log(c),
-    );
+    const categoryNode = getExerciseCategoryNode(category, async (c) => {
+      const exercisesResponse = await getCategoryExercises(c);
+      console.log(exercisesResponse.results);
+    });
     const node = document.createElement('li');
     node.appendChild(categoryNode);
     categoriesList.appendChild(node);
