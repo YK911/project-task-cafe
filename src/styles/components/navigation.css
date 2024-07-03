@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 8px 34px;
+  background-color: rgb(var(--cl-primary-dark));
+  border-radius: var(--radius-xl);
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
+  @media only screen and (min-width: 1440px) {
+    padding: 8px 50px;
+  }
+}
+.nav-link {
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(var(--cl-primary-light));
+  border-radius: 30px;
+
+  &.active {
+    color: rgb(var(--cl-primary-dark));
+    background-color: rgb(var(--cl-primary-light));
+  }
+}

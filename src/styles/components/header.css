@@ -6,6 +6,23 @@
   }
 
   @media only screen and (min-width: 1440px) {
-    padding: 24px 0;
+    padding-top: 28px;
+  }
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-socials {
+  --color-icon: rgb(var(--cl-primary-dark));
+  --color-icon-hover: rgb(var(--cl-primary-light));
+  --color-bg: transparent;
+  --color-bg-hover: rgb(var(--cl-primary-dark) / 80%);
+  --color-frame: rgb(var(--cl-primary-dark) / 10%);
+  --color-frame-hover: transparent;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
   }
 }
