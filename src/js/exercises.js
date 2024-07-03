@@ -14,8 +14,8 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
       limit,
     },
   };
-  const stringifiedSearch = JSON.stringify(options);
-  const storedValue = sessionStorage.getItem(stringifiedSearch);
+  const stringifiedSearchKey = JSON.stringify(options);
+  const storedValue = sessionStorage.getItem(stringifiedSearchKey);
 
   if (storedValue) {
     return JSON.parse(storedValue);
@@ -28,7 +28,7 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
   const { data } = result;
 
   if (data) {
-    sessionStorage.setItem(stringifiedSearch, JSON.stringify(data));
+    sessionStorage.setItem(stringifiedSearchKey, JSON.stringify(data));
   }
 
   return data;
