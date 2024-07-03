@@ -37,6 +37,11 @@
     <symbol id="arrow" viewBox="0 0 33 32">
       <path d="M17.6192 5.47776L17.6192 31.0059L14.9033 31.0059L14.9033 5.47776L2.13919 18.2419L0.21875 16.3214L16.2612 0.278928L32.3037 16.3214L30.3833 18.2419L17.6192 5.47776Z"/>
     </symbol>
-
+    <symbol id="burger-menu" viewBox="0 0 32 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.333h-24"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 8h-24"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 18.667h-24"></path>
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 24h-24"></path>
+    </symbol>
   </defs>
 </svg>

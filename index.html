@@ -1,29 +1,88 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
     <title>YOUR ENERGY | Home page</title>
     <script type="module" crossorigin src="/project-task-cafe/assets/vendor-ZJedTZfi.js"></script>
-    <script type="module" crossorigin src="/project-task-cafe/assets/main-dRCh7aa9.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-D8Fomvx1.css">
+    <script type="module" crossorigin src="/project-task-cafe/assets/main-BoaxlTow.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-vua3mJfI.css">
     <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-BkxNFFwb.css">
   </head>
 
-  <body>
-    <!-- Custom tag for html-templating -->
-    <!-- Use attribute named file to define to template -->
+  <body class="homepage">
     <header class="header">
-  <div class="container">
-    <a href="./index.html">Home page</a>
-    <a href="./favorites.html">Favorites page</a>
+  <div class="container header-container">
+    <a
+      class="logo on-hover js-logo"
+      href="./index.html"
+      aria-label="your energy logo"
+    >
+      <svg class="logo-icon" width="132" height="24">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#logo"></use>
+      </svg>
+    </a>
+
+    <nav class="nav header-nav">
+  <a href="./index.html" class="nav-link active">Home</a>
+  <a href="./favorites.html" class="nav-link ">Favorites</a>
+</nav>
+
+
+    <ul class="socials header-socials">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub/"
+      aria-label="Go to our facebook page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub/"
+      aria-label="Go to our instagram page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      aria-label="Go to our youtube page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+
+    <button
+      class="menu-toggle on-hover js-open-menu"
+      aria-controls="mob-menu"
+      aria-label="Open menu button"
+    >
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#burger-menu"></use>
+      </svg>
+    </button>
   </div>
 </header>
 
 
     <main>
-      <!-- We can define props for templates -->
       <section class="hero">
   <div class="container">
     <h2>Home page</h2>
@@ -52,69 +111,168 @@
         <div class="logo-container">
           <a href="./index.html" class="logo" aria-label="Main Page">
             <svg width="132" height="24">
-              <use href="/project-task-cafe/assets/icons-C4zbGCgX.svg#logo"></use>
+              <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#logo"></use>
             </svg>
           </a>
         </div>
-        <ul class="socials-container">
-          <li class="socials-item">
-            <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener norefferer"
-              aria-label="Facebook">
-              <svg width="24" height="24">
-                <use href="/project-task-cafe/assets/icons-C4zbGCgX.svg#facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials-item">
-            <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener norefferer"
-              aria-label="Instagram">
-              <svg width="24" height="24">
-                <use href="/project-task-cafe/assets/icons-C4zbGCgX.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials-item">
-            <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener norefferer"
-              aria-label="Youtube">
-              <svg width="24" height="24">
-                <use href="/project-task-cafe/assets/icons-C4zbGCgX.svg#youtube"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+
+        <ul class="socials footer-socials">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub/"
+      aria-label="Go to our facebook page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub/"
+      aria-label="Go to our instagram page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      aria-label="Go to our youtube page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
       </div>
       <div class="subscription-container">
-        <h2 class="subscription-title">Transforming your <span class="italic-accent">body</span> shape with us</h2>
+        <h2 class="subscription-title">
+          Transforming your <span class="italic-accent">body</span> shape with
+          us
+        </h2>
         <form class="subscription-form" id="subscribtionForm">
           <h3 class="subscription-form-title">
             Subscribe and learn about new exercises!
           </h3>
-          <input class="subscription-form-email" type="email" name="email" placeholder="Email" required />
-          <button class="subscription-form-btn" type="submit" id="subscribtionFormBtn" disabled>
+          <input
+            class="subscription-form-email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <button
+            class="subscription-form-btn"
+            type="submit"
+            id="subscribtionFormBtn"
+            disabled
+          >
             Send
           </button>
         </form>
       </div>
     </div>
     <div class="rights-container">
-      <p class="rights-text">
-        Your Energy. All rights reserved.
-      </p>
+      <p class="rights-text">Your Energy. All rights reserved.</p>
       <div class="privacy-copyright-container">
-        <p class="privacy-text">
-          <a class="socials-link" href="#" target="_blank" rel="noopener norefferer">Privacy Policy</a> &sol; <a
-            class="socials-link" href="#" target="_blank" rel="noopener norefferer">Terms of Service</a>
-        </p>
-        </p>
+        <div>
+          <a
+            class="rights-link"
+            href="#"
+            target="_blank"
+            rel="noopener norefferer"
+            >Privacy Policy</a
+          >
+          &sol;
+          <a
+            class="rights-link"
+            href="#"
+            target="_blank"
+            rel="noopener norefferer"
+            >Terms of Service</a
+          >
+        </div>
         <p class="year-copyright-text">&copy;2023</p>
       </div>
     </div>
   </div>
-  <a href="#" class="scroll-btn" id="scrollBtn" aria-label="Scroll Up">
-    <svg width="14" height="14" class="scroll-icon">
-      <use href="/project-task-cafe/assets/icons-C4zbGCgX.svg#arrow"></use>
-    </svg>
-  </a>
 </footer>
+
+    <div class="backdrop is-hidden js-menu-backdrop">
+  <div class="menu-container js-menu-container" id="mob-menu">
+    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#x-mark"></use>
+      </svg>
+    </button>
+
+    <ul class="menu-nav js-menu-link">
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./index.html">Home</a>
+      </li>
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./favorites.html">Favorites</a>
+      </li>
+    </ul>
+
+    <ul class="socials menu-socials">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub/"
+      aria-label="Go to our facebook page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub/"
+      aria-label="Go to our instagram page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      aria-label="Go to our youtube page"
+      target="_blank"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+    <a href="#" class="scroll-btn" id="scrollBtn" aria-label="Scroll Up">
+  <svg width="14" height="14" class="scroll-icon">
+    <use href="/project-task-cafe/assets/icons-DYSFk3Mg.svg#arrow"></use>
+  </svg>
+</a>
+
   </body>
 </html>
