@@ -1,4 +1,6 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.getElementById('subscribtionForm');
 const formEmail = form.querySelector('input[name="email"]');
@@ -12,16 +14,13 @@ const isValidEmail = (email) => {
 const validation = () => {
   const emailValue = formEmail.value.trim();
   const isValid = isValidEmail(emailValue);
-  const whiteColor = getComputedStyle(
-    document.documentElement,
-  ).getPropertyValue('--color-white');
 
   if (isValid) {
-    formEmail.style.borderColor = whiteColor;
+    formEmail.style.borderColor = '';
     formBtn.disabled = false;
   } else {
     if (emailValue === '') {
-      formEmail.style.borderColor = whiteColor;
+      formEmail.style.borderColor = '';
     } else {
       formEmail.style.borderColor = 'red';
     }
@@ -38,7 +37,7 @@ const subscribe = async (e) => {
   try {
     formBtn.disabled = true;
 
-    const response = await axios.post(
+    await axios.post(
       'https://your-energy.b.goit.study/api/subscription',
       JSON.stringify({ email: formEmail.value.trim() }),
       {
@@ -49,25 +48,35 @@ const subscribe = async (e) => {
     );
 
     form.reset();
-    console.log('Successful operation:', response.status, response.statusText);
+
+    iziToast.success({
+      title: 'OK',
+      message: 'You have subscribed!',
+      position: 'topRight',
+    });
   } catch (err) {
     if (err.response) {
       if (err.response.status === 409) {
         form.reset();
-        console.log(
-          'Subscription already exists:',
-          err.response.status,
-          err.response.statusText,
-        );
+
+        iziToast.warning({
+          title: 'OK',
+          message: 'Subscription already exists.',
+          position: 'topRight',
+        });
       } else {
-        console.log(
-          'Server Error:',
-          err.response.status,
-          err.response.statusText,
-        );
+        iziToast.error({
+          title: 'Oops',
+          message: err.response.statusText,
+          position: 'topRight',
+        });
       }
     } else {
-      console.log('Error:', err.message);
+      iziToast.error({
+        title: 'Oops',
+        message: err.message,
+        position: 'topRight',
+      });
     }
   }
 };
