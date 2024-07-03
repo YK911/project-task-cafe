@@ -1,26 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
     <title>YOUR ENERGY | Home page</title>
     <script defer type="module" src="/js/main.js"></script>
   </head>
-
-  <body>
-    <!-- Custom tag for html-templating -->
-    <!-- Use attribute named file to define to template -->
+  <body class="homepage">
     <template
       file="/templates/header.html"
-      home-page-path="./index.html"
-      fav-page-path="./favorites.html"
+      home-active="active"
+      fav-active=""
     />
 
     <main>
-      <!-- We can define props for templates -->
       <template file="/templates/hero-section.html" text="Home page" />
-      <template file="/templates/exercises-section.html" />
+      <template file="/templates/exercises/layout.html" />
     </main>
 
     <template file="/templates/footer.html" />
@@ -35,5 +30,8 @@
 
     <template file="/templates/modals/exercise-modal.html" />
     <template file="/templates/modals/rating-modal.html" />
+
+    <template file="/templates/mobile-menu.html" />
+    <template file="/templates/scroll-to-top.html" />
   </body>
 </html>
