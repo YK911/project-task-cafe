@@ -10,7 +10,11 @@
 /* #endregion */
 
 /* #region Components */
+@import url('./components/socials.css');
 @import url('./components/header.css');
+@import url('./components/navigation.css');
 @import url('./components/exercises-section.css');
 @import url('./components/footer.css');
+@import url('./components/mobile-menu.css');
+@import url('./components/scroll-to-top.css');
 /* #endregion */
