@@ -8,7 +8,8 @@ function toggleMenu() {
 }
 
 function onMenuClick(evt) {
-  if (evt.currentTarget === evt.target) {
+  if (window.location.href === evt.target.href) {
+    evt.preventDefault();
     return;
   }
   toggleMenu();
