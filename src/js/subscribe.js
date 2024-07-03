@@ -51,9 +51,7 @@ const subscribe = async (e) => {
 
     iziToast.success({
       title: 'OK',
-      titleColor: 'green',
       message: 'You have subscribed!',
-      messageColor: 'green',
       position: 'topRight',
     });
   } catch (err) {
@@ -61,28 +59,22 @@ const subscribe = async (e) => {
       if (err.response.status === 409) {
         form.reset();
 
-        iziToast.success({
+        iziToast.warning({
           title: 'OK',
-          titleColor: 'green',
           message: 'Subscription already exists.',
-          messageColor: 'green',
           position: 'topRight',
         });
       } else {
         iziToast.error({
           title: 'Oops',
-          titleColor: 'red',
           message: err.response.statusText,
-          messageColor: 'red',
           position: 'topRight',
         });
       }
     } else {
       iziToast.error({
         title: 'Oops',
-        titleColor: 'red',
         message: err.message,
-        messageColor: 'red',
         position: 'topRight',
       });
     }
