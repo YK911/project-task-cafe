@@ -3,14 +3,16 @@
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>YOUR ENERGY | Favorites page</title>
     <script defer type="module" src="/js/main.js"></script>
   </head>
 
   <body class="favorites">
-    <template file="/templates/header.html" />
+    <template
+      file="/templates/header.html"
+      home-active=""
+      fav-active="active"
+    />
 
     <main>
       <template
@@ -20,6 +22,7 @@
     </main>
 
     <template file="/templates/footer.html" />
-    <script type="module" src="./js/favorites.js"></script>
+    <template file="/templates/mobile-menu.html" />
+    <template file="/templates/scroll-to-top.html" />
   </body>
 </html>

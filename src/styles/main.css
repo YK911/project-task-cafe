@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap');
-
 /* #region Utils */
 @import url('./utils/fonts.css');
 @import url('./utils/variables.css');
@@ -12,7 +10,11 @@
 /* #endregion */
 
 /* #region Components */
+@import url('./components/socials.css');
 @import url('./components/header.css');
+@import url('./components/navigation.css');
 @import url('./components/exercises-section.css');
 @import url('./components/footer.css');
+@import url('./components/mobile-menu.css');
+@import url('./components/scroll-to-top.css');
 /* #endregion */

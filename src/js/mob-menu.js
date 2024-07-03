@@ -1,11 +1,9 @@
 const backdrop = document.querySelector('.js-menu-backdrop');
-const mobMenu = document.querySelector('.js-menu-container');
 const openMenuBtn = document.querySelector('.js-open-menu');
 const closeMenuBtn = document.querySelector('.js-close-menu');
 const mobMenuLink = document.querySelector('.js-menu-link');
 
 function toggleMenu() {
-  mobMenu.classList.toggle('is-open');
   backdrop.classList.toggle('is-hidden');
 }
 

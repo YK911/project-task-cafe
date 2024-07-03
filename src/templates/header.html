@@ -1,64 +1,31 @@
 <header class="header">
-  <div class="container header-wrapper">
+  <div class="container header-container">
     <a
       class="logo on-hover js-logo"
-      href="/src/index.html"
+      href="./index.html"
       aria-label="your energy logo"
     >
-      <svg class="main-logo">
-        <use href="../img/main-logo.svg#main-logo"></use>
+      <svg class="logo-icon" width="132" height="24">
+        <use href="./assets/icons.svg#logo"></use>
       </svg>
     </a>
 
-    <template file="templates/ui/header-toggle-bar.html" />
+    <template
+      file="templates/navigation.html"
+      home-active="{=$home-active}"
+      fav-active="{=$fav-active}"
+    />
 
-    <div class="socials">
-      <template file="templates/ui/socials-list.html" />
-    </div>
+    <template file="templates/socials.html" modifier="header-socials" />
 
     <button
-      class="menu-btn on-hover js-open-menu"
+      class="menu-toggle on-hover js-open-menu"
       aria-controls="mob-menu"
       aria-label="Open menu button"
     >
-      <svg class="menu-icon" width="32" height="32">
-        <use href="../img/icons.svg#icon-burger"></use>
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="./assets/icons.svg#burger-menu"></use>
       </svg>
     </button>
   </div>
 </header>
-
-<div class="backdrop is-hidden js-menu-backdrop">
-  <div class="menu-container js-menu-container" id="mob-menu">
-    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
-      <svg class="modal-btn-icon" width="32" height="32">
-        <use href="../img/icons.svg#menu-close"></use>
-      </svg>
-    </button>
-
-    <div class="menu-wrapper menu-main">
-      <ul class="menu-ul js-menu-link list">
-        <li class="menu-li on-hover">
-          <a
-            class="menu-link"
-            href="./index.html"
-            aria-label="Go to Home section"
-            >Home</a
-          >
-        </li>
-        <li class="menu-li on-hover">
-          <a
-            class="menu-link"
-            href="./favorites.html"
-            aria-label="Go to Favorites section"
-            >Favorites</a
-          >
-        </li>
-      </ul>
-
-      <div class="menu-wrapper">
-        <template file="templates/ui/socials-list.html" />
-      </div>
-    </div>
-  </div>
-</div>
