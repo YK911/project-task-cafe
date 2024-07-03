@@ -5,6 +5,6 @@ import './exercises';
 import './subscribe';
 import './mob-menu';
 import './smooth-scroll';
-import './modal';
+import './modals';
 
 console.log('Working ✨');
