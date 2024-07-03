@@ -1,6 +1,7 @@
 /* #region Utils */
 @import url('./utils/fonts.css');
 @import url('./utils/variables.css');
+@import url('./utils/visually-hidden.css');
 /* #endregion */
 
 /* #region Base */
@@ -14,6 +15,7 @@
 @import url('./components/header.css');
 @import url('./components/navigation.css');
 @import url('./components/exercises-section.css');
+@import url('./components/quote.css');
 @import url('./components/footer.css');
 @import url('./components/mobile-menu.css');
 @import url('./components/scroll-to-top.css');
