@@ -10,13 +10,17 @@
 @import url('./base/container.css');
 /* #endregion */
 
-/* #region Components */
+/* #region Common */
 @import url('./components/socials.css');
+@import url('./components/scroll-to-top.css');
+@import url('./components/mobile-menu.css');
+/* #endregion */
+
+/* #region Components */
 @import url('./components/header.css');
 @import url('./components/navigation.css');
-@import url('./components/exercises-section.css');
-@import url('./components/quote.css');
+@import url('./components/exercises/layout.css');
+@import url('./components/exercises/category.css');
+@import url('./components/exercises/blockquote.css');
 @import url('./components/footer.css');
-@import url('./components/mobile-menu.css');
-@import url('./components/scroll-to-top.css');
 /* #endregion */

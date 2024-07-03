@@ -4,6 +4,8 @@ import {
   REST_DISPLAY_FITTER_ITEMS_QTY,
 } from './config';
 
+import getExerciseCategoryNode from './exercise-category';
+
 async function getFilterItemCategories(filter, page = 1, limit = 12) {
   const options = {
     params: {
@@ -42,6 +44,27 @@ function getItemsPerPage() {
   return REST_DISPLAY_FITTER_ITEMS_QTY;
 }
 
+function drawCategoriesList(containerSelector, categories, filterName) {
+  const container = document.querySelector(containerSelector);
+
+  if (!container) {
+    console.log('Container not found');
+    return;
+  }
+
+  container.innerHTML = '';
+  const categoriesList = document.createElement('ul');
+
+  categories.forEach((category) => {
+    const categoryNode = getExerciseCategoryNode(category, filterName);
+    const node = document.createElement('li');
+    node.appendChild(categoryNode);
+    categoriesList.appendChild(node);
+  });
+
+  container.appendChild(categoriesList);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const filterItems = document.querySelectorAll('.exercises-filter-list li');
 
@@ -68,6 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       console.log('filterItemCategories: ', filterItemCategories);
       console.log('totalPages: ', totalPages);
+
+      drawCategoriesList(
+        '.exercises-categories',
+        filterItemCategories.results,
+        buttonValue,
+        (category) => console.log(category),
+      );
     });
   });
 });
