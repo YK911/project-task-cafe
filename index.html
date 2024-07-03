@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YOUR ENERGY | Home page</title>
     <script type="module" crossorigin src="/project-task-cafe/assets/vendor-BxImpeud.js"></script>
-    <script type="module" crossorigin src="/project-task-cafe/assets/main-CjT9BCiF.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-BZh2OL_t.css">
+    <script type="module" crossorigin src="/project-task-cafe/assets/main-DBZPc2HW.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-DyqMcWVJ.css">
     <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-pbv_zplY.css">
   </head>
   <body class="homepage">
@@ -105,8 +105,38 @@
       </ul>
     </div>
     <div class="exercises-container">
-      <div class="exercises-categories">
-        <article id="exercise-category-template">
+      <div class="exercises-categories" data-exercise>
+        <article
+  class="js-exercise-category"
+  id="exercise-category-template"
+  data-id="64f389465ae26083f39b1ab2"
+>
+  <div class="exercise-category">
+    <div class="exercise-category-inner">
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
+</article>
+
+        <article
+  class="js-exercise-category"
+  id="exercise-category-template"
+  data-id="64f389465ae26083f39b17b3"
+>
+  <div class="exercise-category">
+    <div class="exercise-category-inner">
+      <h3></h3>
+      <p></p>
+    </div>
+  </div>
+</article>
+
+        <article
+  class="js-exercise-category"
+  id="exercise-category-template"
+  data-id="64f389465ae26083f39b17bf"
+>
   <div class="exercise-category">
     <div class="exercise-category-inner">
       <h3></h3>
@@ -291,6 +321,143 @@
     </div>
   </div>
 </footer>
+
+
+    <dialog class="modal" data-modal="exercise">
+  <button class="modal-close-btn" type="button" data-modal-close>
+    <svg class="modal-btn-icon" width="24" height="24">
+      <use href="/project-task-cafe/assets/icons-CA46z2uq.svg#x-mark"></use>
+    </svg>
+  </button>
+
+  <div class="modal-body">
+    <!-- <div class="modal-ill">
+      <img
+        src="./assets/images/exercises/img-1.jpg"
+        alt="Exercise animated image"
+        width="295"
+        height="258"
+        loading="lazy"
+      />
+    </div>
+    <div class="modal-details">
+      <h2 class="modal-caption">Air bake</h2>
+      <div class="modal-rating">
+        <p>4.0</p>
+        <svg width="98" height="13" id="rating-stars">
+          <use style="--shift: -2" href="./assets/icons.svg#star"></use>
+          <use style="--shift: -1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 0" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 2" href="./assets/icons.svg#star"></use>
+        </svg>
+      </div>
+      <div class="modal-rating">
+        <p>4.0</p>
+        <svg width="98" height="13" id="rating-stars">
+          <use style="--shift: -2" href="./assets/icons.svg#star"></use>
+          <use style="--shift: -1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 0" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 2" href="./assets/icons.svg#star"></use>
+        </svg>
+      </div>
+      <ul class="modal-meta">
+        <li>
+          <h3 class="modal-meta-caption">Target</h3>
+          <p class="modal-meta-info">Abs</p>
+        </li>
+        <li>
+          <h3 class="modal-meta-caption">Body Part</h3>
+          <p class="modal-meta-info">Waist</p>
+        </li>
+        <li>
+          <h3 class="modal-meta-caption">Equipment</h3>
+          <p class="modal-meta-info">Body weight</p>
+        </li>
+        <li>
+          <h3 class="modal-meta-caption">Popular</h3>
+          <p class="modal-meta-info">150</p>
+        </li>
+        <li>
+          <h3 class="modal-meta-caption">Burned Calories</h3>
+          <p class="modal-meta-info">323/3 min</p>
+        </li>
+      </ul>
+      <p class="modal-desc">
+        This refers to your core muscles, which include the rectus abdominis,
+        obliques, and transverse abdominis. They're essential for maintaining
+        posture, stability, and generating force in many movements. Exercises
+        that target the abs include crunches, leg raises, and planks.
+      </p>
+    </div> -->
+  </div>
+
+  <div class="modal-controls">
+    <button class="modal-btn filled" type="button" data-add-favourites>
+      <span>Add to favorites</span>
+      <svg class="modal-btn-icon" width="18" height="18">
+        <use href="/project-task-cafe/assets/icons-CA46z2uq.svg#heart"></use>
+        <use href="/project-task-cafe/assets/icons-CA46z2uq.svg#trash"></use>
+      </svg>
+    </button>
+    <button class="modal-btn" type="button" data-rating-open>
+      Give a rating
+    </button>
+  </div>
+</dialog>
+
+    <dialog class="modal" data-modal="rating">
+  <button class="modal-close-btn" type="button" data-modal-close>
+    <svg class="modal-btn-icon" width="24" height="24">
+      <use href="/project-task-cafe/assets/icons-CA46z2uq.svg#x-mark"></use>
+    </svg>
+  </button>
+
+  <form class="modal-rating-form rating-form" name="ratingForm">
+    <fieldset class="rating-form-controls">
+      <legend class="rating-form-caption">Rating</legend>
+      <p class="rating-form-value">4.0</p>
+      <label class="rating-form-range">
+        <input
+          type="range"
+          name="ratingRange"
+          value="0"
+          min="0"
+          max="5"
+          step="0.1"
+        />
+        <svg width="98" height="13" id="rating-stars">
+          <use style="--shift: -2" href="/project-task-cafe/assets/icons-CA46z2uq.svg#star"></use>
+          <use style="--shift: -1" href="/project-task-cafe/assets/icons-CA46z2uq.svg#star"></use>
+          <use style="--shift: 0" href="/project-task-cafe/assets/icons-CA46z2uq.svg#star"></use>
+          <use style="--shift: 1" href="/project-task-cafe/assets/icons-CA46z2uq.svg#star"></use>
+          <use style="--shift: 2" href="/project-task-cafe/assets/icons-CA46z2uq.svg#star"></use>
+        </svg>
+      </label>
+    </fieldset>
+    <fieldset class="rating-form-info">
+      <legend class="visually-hidden">Rating form information</legend>
+      <label class="rating-form-field">
+        <input
+          class="rating-form-input"
+          type="email"
+          name="ratingEmail"
+          placeholder="&nbsp;"
+        />
+        <span class="rating-form-tag">Email</span>
+      </label>
+      <label class="rating-form-field">
+        <textarea
+          class="rating-form-message"
+          name="ratingMessage"
+          placeholder="Your comment"
+        ></textarea>
+      </label>
+    </fieldset>
+    <button class="modal-btn filled rating-form-btn" type="submit">Send</button>
+  </form>
+</dialog>
 
 
     <div class="backdrop is-hidden js-menu-backdrop">
