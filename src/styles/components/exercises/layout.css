@@ -86,36 +86,24 @@
 }
 
 .exercises-categories {
-  display: grid;
-  row-gap: 20px;
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 32px;
-    column-gap: 15px;
-  }
-
   @media only screen and (min-width: 1280px) {
     width: calc(100% * 0.667 - 40px);
   }
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    row-gap: 20px;
 
     @media only screen and (min-width: 768px) {
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 32px;
+      column-gap: 15px;
     }
   }
 
   li {
     width: 100%;
     aspect-ratio: 4 / 3;
-
-    @media only screen and (min-width: 768px) {
-      width: calc((100% - 60px) / 3);
-    }
   }
 }
 

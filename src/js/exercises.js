@@ -44,7 +44,7 @@ function getItemsPerPage() {
   return REST_DISPLAY_FITTER_ITEMS_QTY;
 }
 
-function drawCategoriesList(containerSelector, categories, filterName) {
+function drawCategoriesList(containerSelector, categories) {
   const container = document.querySelector(containerSelector);
 
   if (!container) {
@@ -56,7 +56,9 @@ function drawCategoriesList(containerSelector, categories, filterName) {
   const categoriesList = document.createElement('ul');
 
   categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, filterName);
+    const categoryNode = getExerciseCategoryNode(category, (c) =>
+      console.log(c),
+    );
     const node = document.createElement('li');
     node.appendChild(categoryNode);
     categoriesList.appendChild(node);
@@ -65,8 +67,20 @@ function drawCategoriesList(containerSelector, categories, filterName) {
   container.appendChild(categoriesList);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const filterItems = document.querySelectorAll('.exercises-filter-list li');
+
+  const initialFilter = filterItems[0]
+    .querySelector('.exercises-filter-button')
+    .textContent.trim();
+
+  const initialCategories = await getFilterItemCategories(
+    initialFilter,
+    1,
+    getItemsPerPage(),
+  );
+
+  drawCategoriesList('.exercises-categories', initialCategories.results);
 
   filterItems.forEach((item) => {
     item.addEventListener('click', async () => {
@@ -87,17 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPageNumber,
         itemsPerPage,
       );
-      const { totalPages = 0 } = filterItemCategories;
 
-      console.log('filterItemCategories: ', filterItemCategories);
-      console.log('totalPages: ', totalPages);
-
-      drawCategoriesList(
-        '.exercises-categories',
-        filterItemCategories.results,
-        buttonValue,
-        (category) => console.log(category),
-      );
+      drawCategoriesList('.exercises-categories', filterItemCategories.results);
     });
   });
 });
