@@ -20,6 +20,10 @@
   padding: 20px;
   background: rgb(var(--cl-primary-dark));
   border-radius: var(--radius-md);
+
+  @media only screen and (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .quote-body {
