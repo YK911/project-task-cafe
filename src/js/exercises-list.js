@@ -30,26 +30,28 @@ function buildExerciseCard(exercise) {
 
   const card = document.querySelector(templateName).content.cloneNode(true);
 
-  console.log(card);
-
   const id = '_id';
 
   card.children[0].dataset.id = exercise[id];
 
-  //   .card-category
-  console.log(card.querySelector('.card-category'));
+  // .card-category
   card.querySelector('.card-category').textContent = exercise.bodyPart;
 
-  //   .rating-value
-  card.querySelector('.rating-value').textContent = exercise.rating;
+  // .rating-value
+  card.querySelector('.rating-value').textContent = exercise.rating.toFixed(1);
 
-  //   .card-link
+  // .start-button
+  const startButton = card.querySelector('.start-button');
+  startButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    onExerciseClick(exercise[id]);
+  });
 
-  //   .card-title
+  // .card-title
   card.querySelector('.card-title').textContent =
     exercise.name[0].toUpperCase() + exercise.name.slice(1);
 
-  //   .card-details-list
+  // .card-details-list
   const detailsContainer = card.querySelector('.card-details-list');
 
   buildExcerciseCardDetails(exercise).forEach((detail) => {
