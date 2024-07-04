@@ -41,4 +41,4 @@ import{a as y,i as u}from"./vendor-BxImpeud.js";(function(){const t=document.cre
       </li>
     </ul>
     <p class="modal-desc">${n}</p>`},V=async e=>{let{target:t}=e,o;if(t===e.currentTarget)return;for(;t&&t!==void 0;){if(t.classList.contains("js-exercise-category")){o=t.dataset.id;break}t=t.parentElement}const i=await j(o),s=J(i),r=c.dialog.querySelector(".modal-body"),n=c.dialog.querySelector(".modal-btn[data-add-favourites]");n.dataset.addFavourites=o,r.innerHTML=s,R()};c.closeBtn.addEventListener("click",F);c.favouritesBtn.addEventListener("click",D);c.ratingBtn.addEventListener("click",_);c.exercisesLayout.addEventListener("click",V);console.log("Working ✨");
-//# sourceMappingURL=main-CGvvjz0J.js.map
+//# sourceMappingURL=main-5_omqp6p.js.map
