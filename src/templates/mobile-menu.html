@@ -1,3 +1,20 @@
-<div class="mobilee-menu">
-  <h2>Mobile menu</h2>
+<div class="backdrop is-hidden js-menu-backdrop">
+  <div class="menu-container js-menu-container" id="mob-menu">
+    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="./assets/icons.svg#x-mark"></use>
+      </svg>
+    </button>
+
+    <ul class="menu-nav js-menu-link">
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./index.html">Home</a>
+      </li>
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./favorites.html">Favorites</a>
+      </li>
+    </ul>
+
+    <template file="templates/socials.html" modifier="menu-socials" />
+  </div>
 </div>

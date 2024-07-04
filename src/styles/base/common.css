@@ -24,3 +24,14 @@ section {
     padding: 64px 0 132px;
   }
 }
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+  fill: currentColor;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+<dialog class="modal" data-modal="rating">
+  <button class="modal-close-btn" type="button" data-modal-close>
+    <svg class="modal-btn-icon" width="24" height="24">
+      <use href="./assets/icons.svg#x-mark"></use>
+    </svg>
+  </button>
+
+  <form class="modal-rating-form rating-form" name="ratingForm">
+    <fieldset class="rating-form-controls">
+      <legend class="rating-form-caption">Rating</legend>
+      <p class="rating-form-value">4.0</p>
+      <label class="rating-form-range">
+        <input
+          type="range"
+          name="ratingRange"
+          value="0"
+          min="0"
+          max="5"
+          step="0.1"
+        />
+        <svg width="98" height="13" id="rating-stars">
+          <use style="--shift: -2" href="./assets/icons.svg#star"></use>
+          <use style="--shift: -1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 0" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 1" href="./assets/icons.svg#star"></use>
+          <use style="--shift: 2" href="./assets/icons.svg#star"></use>
+        </svg>
+      </label>
+    </fieldset>
+    <fieldset class="rating-form-info">
+      <legend class="visually-hidden">Rating form information</legend>
+      <label class="rating-form-field">
+        <input
+          class="rating-form-input"
+          type="email"
+          name="ratingEmail"
+          placeholder="&nbsp;"
+        />
+        <span class="rating-form-tag">Email</span>
+      </label>
+      <label class="rating-form-field">
+        <textarea
+          class="rating-form-message"
+          name="ratingMessage"
+          placeholder="Your comment"
+        ></textarea>
+      </label>
+    </fieldset>
+    <button class="modal-btn filled rating-form-btn" type="submit">Send</button>
+  </form>
+</dialog>
