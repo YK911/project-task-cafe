@@ -110,9 +110,18 @@ const onExerciseClick = async (event) => {
   showModal(exerciseId);
 };
 
-exerciseRefs.closeBtn.addEventListener('click', closeModal);
+if (exerciseRefs.closeBtn) {
+  exerciseRefs.closeBtn.addEventListener('click', closeModal);
+}
 
-exerciseRefs.favouritesBtn.addEventListener('click', onFavouritesBtnClick);
-exerciseRefs.ratingBtn.addEventListener('click', onRatingBtnClick);
+if (exerciseRefs.favouritesBtn) {
+  exerciseRefs.favouritesBtn.addEventListener('click', onFavouritesBtnClick);
+}
 
-exerciseRefs.exercisesLayout.addEventListener('click', onExerciseClick);
+if (exerciseRefs.ratingBtn) {
+  exerciseRefs.ratingBtn.addEventListener('click', onRatingBtnClick);
+}
+
+if (exerciseRefs.exercisesLayout) {
+  exerciseRefs.exercisesLayout.addEventListener('click', onExerciseClick);
+}
