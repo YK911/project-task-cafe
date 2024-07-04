@@ -1,4 +1,5 @@
 import capitalize from './capitalize';
+import saveExerciseId from './favorites';
 
 const exerciseRefs = {
   dialog: document.querySelector('[data-modal="exercise"]'),
@@ -14,6 +15,9 @@ const closeModal = () => exerciseRefs.dialog.close();
 const onFavouritesBtnClick = (event) => {
   const target = event.currentTarget;
   const exerciseId = target.dataset.addFavourites;
+
+  saveExerciseId(exerciseId);
+
   console.log(`Click on favourites btn ${exerciseId}`);
 };
 const onRatingBtnClick = () => {

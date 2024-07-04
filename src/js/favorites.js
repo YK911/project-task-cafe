@@ -1,17 +1,18 @@
-console.log('Favorites Working ✨');
-
-const exerciseRefs = {
+/* const exerciseRefs = {
   favouritesBtn: document.querySelector('[data-add-favourites]'),
-};
+}; */
 
 // Function to display exercise IDs from local storage
 function displayExerciseIds() {
   const exerciseList = document.getElementById('exerciseList');
   const exerciseListEmpty = document.getElementById('exerciseListEmpty');
-  exerciseList.innerHTML = '';
+
+  if (exerciseList) {
+    exerciseList.innerHTML = '';
+  }
 
   const exercises = JSON.parse(localStorage.getItem('exercises')) || [];
-  if (exercises.length === 0) {
+  if (exercises.length === 0 && exerciseListEmpty) {
     exerciseListEmpty.classList.remove('visually-hidden');
   } else {
     exercises.forEach((exerciseId) => {
@@ -23,25 +24,25 @@ function displayExerciseIds() {
 }
 
 // Function to save exercise ID to local storage
-function saveExerciseId() {
-  const exerciseIdInput = document.getElementById('exerciseIdInput');
-  const exerciseId = exerciseIdInput.value.trim();
+function saveExerciseId(id) {
+  const exerciseId = id.trim();
 
   if (exerciseId) {
     const exercises = JSON.parse(localStorage.getItem('exercises')) || [];
     exercises.push(exerciseId);
     localStorage.setItem('exercises', JSON.stringify(exercises));
 
-    exerciseIdInput.value = '';
     displayExerciseIds();
   }
 }
 
-if (exerciseRefs.favouritesBtn) {
+/* if (exerciseRefs.favouritesBtn) {
   exerciseRefs.favouritesBtn.addEventListener('click', saveExerciseId);
-}
+} */
 
 // Load and display exercise IDs when the page is loaded
 window.onload = () => {
   displayExerciseIds();
 };
+
+export default saveExerciseId;

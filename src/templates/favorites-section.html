@@ -1,9 +1,15 @@
 <section class="favorites">
   <div class="container">
     <h2>{=$text}</h2>
-    <template file="/templates/exercises/blockquote.html" />
+    <div class="favorites-content">
+      <template
+        file="/templates/exercises/blockquote.html"
+        favorites-page-class="favorites"
+        favorites-page-hidden="visually-hidden" />
 
-    <ul id="exerciseList"></ul>
-    <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      <ul id="exerciseList"></ul>
+      <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+    </div>
+
   </div>
 </section>

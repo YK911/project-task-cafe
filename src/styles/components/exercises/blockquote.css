@@ -125,3 +125,9 @@
     overflow: hidden;
   }
 }
+
+.quote-rec-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
