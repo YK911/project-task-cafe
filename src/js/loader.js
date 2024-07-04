@@ -1,33 +1,15 @@
-export function showLoader(containerSelector) {
-  const container = document.querySelector(containerSelector);
+let loaderTimeout;
 
-  if (!container) {
-    console.log('Container not found');
-    return;
-  }
-
-  container.innerHTML = '';
-
-  container.classList.add('loading');
-
-  const loader = document.createElement('span');
-
-  loader.textContent = 'Loading...';
-
-  loader.classList.add('loader');
-
-  container.appendChild(loader);
+function showLoaderWithTimeout() {
+  document.querySelector('.loader-overlay').style.display = 'flex';
 }
 
-export function hideLoader(containerSelector) {
-  const container = document.querySelector(containerSelector);
+export function showLoader() {
+  // showing loader only if the request takes more than half a second, otherwise it looks cringe
+  loaderTimeout = setTimeout(showLoaderWithTimeout, 500);
+}
 
-  if (!container) {
-    console.log('Container not found');
-    return;
-  }
-
-  container.classList.remove('loading');
-
-  container.querySelector('.loader').remove();
+export function hideLoader() {
+  clearTimeout(loaderTimeout);
+  document.querySelector('.loader-overlay').style.display = 'none';
 }

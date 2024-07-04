@@ -1,6 +1,7 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { showLoader, hideLoader } from './loader';
 
 const form = document.getElementById('subscribtionForm');
 const formEmail = form.querySelector('input[name="email"]');
@@ -37,6 +38,8 @@ const subscribe = async (e) => {
   try {
     formBtn.disabled = true;
 
+    showLoader();
+
     await axios.post(
       'https://your-energy.b.goit.study/api/subscription',
       JSON.stringify({ email: formEmail.value.trim() }),
@@ -46,6 +49,8 @@ const subscribe = async (e) => {
         },
       },
     );
+
+    hideLoader();
 
     form.reset();
 
