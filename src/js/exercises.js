@@ -15,6 +15,36 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
       limit,
     },
   };
+  const stringifiedSearchKey = JSON.stringify(options);
+  const storedValue = sessionStorage.getItem(stringifiedSearchKey);
+
+  if (storedValue) {
+    return JSON.parse(storedValue);
+  }
+
+  const result = await axios.get(
+    'https://your-energy.b.goit.study/api/filters',
+    options,
+  );
+  const { data } = result;
+
+  if (data) {
+    sessionStorage.setItem(stringifiedSearchKey, JSON.stringify(data));
+  }
+
+  return data;
+}
+
+async function getCategoryExercises(category, page = 1, limit = 12) {
+  const options = {
+    params: {
+      limit,
+      page,
+    },
+  };
+
+  options.params[category.filter] = category.name;
+
   const stringifiedSearch = JSON.stringify(options);
   const storedValue = sessionStorage.getItem(stringifiedSearch);
 
@@ -23,7 +53,7 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
   }
 
   const result = await axios.get(
-    'https://your-energy.b.goit.study/api/filters',
+    'https://your-energy.b.goit.study/api/exercises',
     options,
   );
   const { data } = result;
