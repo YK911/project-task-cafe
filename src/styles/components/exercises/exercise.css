@@ -9,7 +9,7 @@
   border: none;
   border-radius: 15px;
   padding: 16px;
-  background-color: #fff;
+  background-color: rgb(var(--cl-white));
 }
 
 .excercise-card-item .card-header {
@@ -22,8 +22,8 @@
 
 .excercise-card-item .card-category {
   font: 500 12px var(--base-font);
-  color: #242424;
-  border: 1px solid #242424;
+  color: rgb(var(--cl-primary-dark));
+  border: 1px solid rgb(var(--cl-primary-dark));
   border-radius: 15px;
   padding: 5px 8px;
   /* width: 76px; */
@@ -39,15 +39,15 @@
 .excercise-card-item .card-rating .rating-value {
   /* margin-left: 5px; */
   font: 400 12px / 150% var(--base-font);
-  color: #242424;
+  color: rgb(var(--cl-primary-dark));
 }
 .excercise-card-item .card-rating .rating-icon {
-  color: #eea10c;
+  color: rgb(var(--fill-star));
 }
 .excercise-card-item .start-button {
   cursor: pointer;
   margin-left: auto;
-  color: #242424;
+  color: rgb(var(--cl-primary-dark));
   display: flex;
   align-items: center;
   gap: 8px;
@@ -70,7 +70,7 @@
 
 .excercise-card-item .card-title {
   font: 400 24px / 133% var(--base-font);
-  color: #242424;
+  color: rgb(var(--cl-primary-dark));
 }
 
 .excercise-card-item .card-details-list {
@@ -85,9 +85,13 @@
 }
 
 .excercise-card-item .card-details-title {
-  color: rgba(36, 36, 36, 0.4);
+  color: rgb(var(--cl-primary-dark) / 40%);
 }
 
 .excercise-card-item .card-details-value {
-  color: #242424;
+  color: rgb(var(--cl-primary-dark));
+}
+
+.start-arrow {
+  stroke: rgb(var(--cl-primary-dark));
 }
