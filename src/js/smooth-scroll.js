@@ -10,3 +10,11 @@ scrollBtn.addEventListener('click', (e) => {
 
   scrollBtn.blur();
 });
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    scrollBtn.style.display = 'flex';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
