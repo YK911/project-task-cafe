@@ -1,6 +1,4 @@
-/* const exerciseRefs = {
-  favouritesBtn: document.querySelector('[data-add-favourites]'),
-}; */
+import { getExerciseById, buildExerciseCard } from './exercise-service';
 
 // Function to display exercise IDs from local storage
 function displayExerciseIds() {
@@ -11,14 +9,26 @@ function displayExerciseIds() {
     exerciseList.innerHTML = '';
   }
 
-  const exercises = JSON.parse(localStorage.getItem('exercises')) || [];
+  const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
+  const fragment = document.createDocumentFragment();
   if (exercises.length === 0 && exerciseListEmpty) {
     exerciseListEmpty.classList.remove('visually-hidden');
-  } else {
-    exercises.forEach((exerciseId) => {
-      const listItem = document.createElement('li');
-      listItem.textContent = exerciseId;
-      exerciseList.appendChild(listItem);
+  } else if (exerciseList) {
+    // Map each exercise ID to a promise that fetches its data
+    const exercisePromises = exercises.map((exerciseId) => {
+      return getExerciseById(exerciseId).then((data) => {
+        const exercise = data;
+        const card = buildExerciseCard(exercise);
+        return card;
+      });
+    });
+
+    // Wait for all promises to resolve before appending to the DOM
+    Promise.all(exercisePromises).then((cards) => {
+      cards.forEach((card) => {
+        fragment.appendChild(card);
+      });
+      exerciseList.appendChild(fragment);
     });
   }
 }
@@ -28,17 +38,15 @@ function saveExerciseId(id) {
   const exerciseId = id.trim();
 
   if (exerciseId) {
-    const exercises = JSON.parse(localStorage.getItem('exercises')) || [];
-    exercises.push(exerciseId);
-    localStorage.setItem('exercises', JSON.stringify(exercises));
+    const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    displayExerciseIds();
+    if (!exercises.includes(exerciseId)) {
+      exercises.push(exerciseId);
+      localStorage.setItem('favorites', JSON.stringify(exercises));
+      displayExerciseIds();
+    }
   }
 }
-
-/* if (exerciseRefs.favouritesBtn) {
-  exerciseRefs.favouritesBtn.addEventListener('click', saveExerciseId);
-} */
 
 // Load and display exercise IDs when the page is loaded
 window.onload = () => {
