@@ -61,9 +61,9 @@ function buildExerciseCard(exercise) {
   return card;
 }
 
-async function getExercisesList(category) {
+async function getExercisesList(category, page = 1) {
   const params = {
-    page: 1,
+    page,
     limit: 10,
   };
 
@@ -79,10 +79,12 @@ async function getExercisesList(category) {
   return response.data;
 }
 
-export default async function drawExercisesList(category) {
-  const data = await getExercisesList(category);
+export default async function drawExercisesList(category, page = 1) {
+  const data = await getExercisesList(category, page);
 
-  const container = document.querySelector('.exercises-categories');
+  const container = document.querySelector(
+    '.exercises-categories,.exercises-list-container',
+  );
 
   container.classList.remove('exercises-categories');
 
@@ -105,4 +107,26 @@ export default async function drawExercisesList(category) {
   });
 
   container.appendChild(list);
+
+  if (data.totalPages > 1) {
+    const paginationContainer = document.createElement('ul');
+    paginationContainer.classList.add('pagination');
+
+    for (let i = 1; i <= data.totalPages; i += 1) {
+      const paginationItem = document.createElement('li');
+      paginationItem.classList.add('pagination-item');
+      paginationItem.textContent = i;
+
+      if (i === data.page) {
+        paginationItem.classList.add('pagination-item-current');
+      } else {
+        paginationItem.addEventListener('click', () => {
+          drawExercisesList(category, i);
+        });
+      }
+
+      paginationContainer.appendChild(paginationItem);
+      container.appendChild(paginationContainer);
+    }
+  }
 }
