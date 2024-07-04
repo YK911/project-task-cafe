@@ -1,0 +1,93 @@
+/* .exercises-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
+
+.excercise-card-item {
+  max-width: 100%;
+  border: none;
+  border-radius: 15px;
+  padding: 16px;
+  background-color: #fff;
+}
+
+.excercise-card-item .card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.excercise-card-item .card-category {
+  font: 500 12px var(--base-font);
+  color: #242424;
+  border: 1px solid #242424;
+  border-radius: 15px;
+  padding: 5px 8px;
+  /* width: 76px; */
+  /* height: 26px; */
+  text-transform: uppercase;
+}
+
+.excercise-card-item .card-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.excercise-card-item .card-rating .rating-value {
+  /* margin-left: 5px; */
+  font: 400 12px / 150% var(--base-font);
+  color: #242424;
+}
+.excercise-card-item .card-rating .rating-icon {
+  color: #eea10c;
+}
+.excercise-card-item .start-button {
+  cursor: pointer;
+  margin-left: auto;
+  color: #242424;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.excercise-card-item .start-button .start-button-text {
+  font: 400 14px / 129% var(--base-font);
+}
+
+.excercise-card-item .card-body {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 16px;
+  align-items: top;
+}
+
+.excercise-card-item .card-icon {
+  margin-top: 4px;
+}
+
+.excercise-card-item .card-title {
+  font: 400 24px / 133% var(--base-font);
+  color: #242424;
+}
+
+.excercise-card-item .card-details-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 16px;
+}
+
+.excercise-card-item .card-details-item {
+  font: 400 12px / 150% var(--base-font);
+}
+
+.excercise-card-item .card-details-title {
+  color: rgba(36, 36, 36, 0.4);
+}
+
+.excercise-card-item .card-details-value {
+  color: #242424;
+}

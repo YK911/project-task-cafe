@@ -89,19 +89,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     <p class="modal-desc">${description}</p>`;
 };
 
-const onExerciseClick = async (event) => {
-  let { target } = event;
-  let exerciseId;
-  if (target === event.currentTarget) return;
-
-  while (target && target !== this) {
-    if (target.classList.contains('js-exercise-category')) {
-      exerciseId = target.dataset.id;
-      break;
-    }
-    target = target.parentElement;
-  }
-
+export default async function onExerciseClick(exerciseId) {
   const exerciseDetails = await getExerciseDetails(exerciseId);
   const detailsMarkup = createExerciseDetailsMarkup(exerciseDetails);
   const detailsBlock = exerciseRefs.dialog.querySelector('.modal-body');
@@ -112,7 +100,7 @@ const onExerciseClick = async (event) => {
   detailsBlock.innerHTML = detailsMarkup;
 
   showModal(exerciseId);
-};
+}
 
 if (exerciseRefs.closeBtn) {
   exerciseRefs.closeBtn.addEventListener('click', closeModal);
