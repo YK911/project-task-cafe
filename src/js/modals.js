@@ -85,7 +85,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     <p class="modal-desc">${description}</p>`;
 };
 
-const onExerciseClick = async (event) => {
+export default async function onExerciseClick(event) {
   let { target } = event;
   let exerciseId;
   if (target === event.currentTarget) return;
@@ -108,11 +108,11 @@ const onExerciseClick = async (event) => {
   detailsBlock.innerHTML = detailsMarkup;
 
   showModal(exerciseId);
-};
+}
 
 exerciseRefs.closeBtn.addEventListener('click', closeModal);
 
 exerciseRefs.favouritesBtn.addEventListener('click', onFavouritesBtnClick);
 exerciseRefs.ratingBtn.addEventListener('click', onRatingBtnClick);
 
-exerciseRefs.exercisesLayout.addEventListener('click', onExerciseClick);
+// exerciseRefs.exercisesLayout.addEventListener('click', onExerciseClick);

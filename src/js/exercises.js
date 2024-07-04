@@ -5,6 +5,7 @@ import {
 } from './config';
 
 import getExerciseCategoryNode from './exercise-category';
+import drawExercisesList from './exercises-list';
 
 async function getFilterItemCategories(filter, page = 1, limit = 12) {
   const options = {
@@ -57,7 +58,7 @@ function drawCategoriesList(containerSelector, categories) {
 
   categories.forEach((category) => {
     const categoryNode = getExerciseCategoryNode(category, (c) =>
-      console.log(c),
+      drawExercisesList(c),
     );
     const node = document.createElement('li');
     node.appendChild(categoryNode);

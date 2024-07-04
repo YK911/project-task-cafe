@@ -22,6 +22,7 @@
 @import url('./components/navigation.css');
 @import url('./components/exercises/layout.css');
 @import url('./components/exercises/category.css');
+@import url('./components/exercises/exercise.css');
 @import url('./components/exercises/blockquote.css');
 @import url('./components/footer.css');
 @import url('./components/modal.css');
