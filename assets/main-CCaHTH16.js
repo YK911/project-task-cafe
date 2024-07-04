@@ -41,4 +41,4 @@ import{a as p,h,i as d}from"./vendor-CtRQQMrb.js";(function(){const t=document.c
       </li>
     </ul>
     <p class="modal-desc">${i}</p>`},U=async e=>{let{target:t}=e,s;if(t===e.currentTarget)return;for(;t&&t!==void 0;){if(t.classList.contains("js-exercise-category")){s=t.dataset.id;break}t=t.parentElement}const r=await Q(s),o=z(r),n=c.dialog.querySelector(".modal-body"),i=c.dialog.querySelector(".modal-btn[data-add-favourites]");i.dataset.addFavourites=s,n.innerHTML=o,J()};c.closeBtn.addEventListener("click",V);c.favouritesBtn.addEventListener("click",j);c.ratingBtn.addEventListener("click",K);c.exercisesLayout.addEventListener("click",U);console.log("Working ✨");
-//# sourceMappingURL=main-CSDaLdfz.js.map
+//# sourceMappingURL=main-CCaHTH16.js.map
