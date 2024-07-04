@@ -136,3 +136,11 @@
     width: 100%;
   }
 }
+
+.excercises-categories.loading,
+.exercises-list-container.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
