@@ -14,6 +14,36 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
       limit,
     },
   };
+  const stringifiedSearchKey = JSON.stringify(options);
+  const storedValue = sessionStorage.getItem(stringifiedSearchKey);
+
+  if (storedValue) {
+    return JSON.parse(storedValue);
+  }
+
+  const result = await axios.get(
+    'https://your-energy.b.goit.study/api/filters',
+    options,
+  );
+  const { data } = result;
+
+  if (data) {
+    sessionStorage.setItem(stringifiedSearchKey, JSON.stringify(data));
+  }
+
+  return data;
+}
+
+async function getCategoryExercises(category, page = 1, limit = 12) {
+  const options = {
+    params: {
+      limit,
+      page,
+    },
+  };
+
+  options.params[category.filter] = category.name;
+
   const stringifiedSearch = JSON.stringify(options);
   const storedValue = sessionStorage.getItem(stringifiedSearch);
 
@@ -22,7 +52,7 @@ async function getFilterItemCategories(filter, page = 1, limit = 12) {
   }
 
   const result = await axios.get(
-    'https://your-energy.b.goit.study/api/filters',
+    'https://your-energy.b.goit.study/api/exercises',
     options,
   );
   const { data } = result;
@@ -44,7 +74,7 @@ function getItemsPerPage() {
   return REST_DISPLAY_FITTER_ITEMS_QTY;
 }
 
-function drawCategoriesList(containerSelector, categories, filterName) {
+function drawCategoriesList(containerSelector, categories) {
   const container = document.querySelector(containerSelector);
 
   if (!container) {
@@ -56,7 +86,10 @@ function drawCategoriesList(containerSelector, categories, filterName) {
   const categoriesList = document.createElement('ul');
 
   categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, filterName);
+    const categoryNode = getExerciseCategoryNode(category, async (c) => {
+      const exercisesResponse = await getCategoryExercises(c);
+      console.log(exercisesResponse.results);
+    });
     const node = document.createElement('li');
     node.appendChild(categoryNode);
     categoriesList.appendChild(node);
@@ -65,8 +98,20 @@ function drawCategoriesList(containerSelector, categories, filterName) {
   container.appendChild(categoriesList);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const filterItems = document.querySelectorAll('.exercises-filter-list li');
+
+  const initialFilter = filterItems[0]
+    .querySelector('.exercises-filter-button')
+    .textContent.trim();
+
+  const initialCategories = await getFilterItemCategories(
+    initialFilter,
+    1,
+    getItemsPerPage(),
+  );
+
+  drawCategoriesList('.exercises-categories', initialCategories.results);
 
   filterItems.forEach((item) => {
     item.addEventListener('click', async () => {
@@ -87,17 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPageNumber,
         itemsPerPage,
       );
-      const { totalPages = 0 } = filterItemCategories;
 
-      console.log('filterItemCategories: ', filterItemCategories);
-      console.log('totalPages: ', totalPages);
-
-      drawCategoriesList(
-        '.exercises-categories',
-        filterItemCategories.results,
-        buttonValue,
-        (category) => console.log(category),
-      );
+      drawCategoriesList('.exercises-categories', filterItemCategories.results);
     });
   });
 });

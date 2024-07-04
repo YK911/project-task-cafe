@@ -1,14 +1,10 @@
-export default function getExerciseCategoryNode(
-  category,
-  filterName,
-  clickHandler,
-) {
+export default function getExerciseCategoryNode(category, clickHandler) {
   const categoryItem = document
     .querySelector('#exercise-category-template')
     .content.cloneNode(true);
 
   categoryItem.querySelector('h3').textContent = category.name;
-  categoryItem.querySelector('p').textContent = filterName;
+  categoryItem.querySelector('p').textContent = category.filter;
   categoryItem.querySelector('.exercise-category').style.backgroundImage =
     `url(${category.imgURL})`;
 
