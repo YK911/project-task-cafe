@@ -91,7 +91,7 @@
     width: calc(100% - 444px - 32px);
   }
 
-  ul {
+  ul.categories-cards {
     display: grid;
     row-gap: 20px;
 
@@ -100,18 +100,18 @@
       row-gap: 32px;
       column-gap: 15px;
     }
-  }
 
-  li {
-    width: 100%;
-    aspect-ratio: 3 / 2;
+    li {
+      width: 100%;
+      aspect-ratio: 3 / 2;
 
-    @media only screen and (min-width: 768px) {
-      aspect-ratio: 1 / 1;
-    }
+      @media only screen and (min-width: 768px) {
+        aspect-ratio: 1 / 1;
+      }
 
-    @media only screen and (min-width: 1280px) {
-      aspect-ratio: 6 / 5;
+      @media only screen and (min-width: 1280px) {
+        aspect-ratio: 6 / 5;
+      }
     }
   }
 }

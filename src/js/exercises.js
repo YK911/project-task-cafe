@@ -1,104 +1,4 @@
-import axios from 'axios';
-import {
-  MOBILE_FILTER_ITEMS_QTY,
-  REST_DISPLAY_FITTER_ITEMS_QTY,
-} from './config';
-
-import getExerciseCategoryNode from './exercise-category';
-import drawExercisesList from './exercises-list';
-
-async function getFilterItemCategories(filter, page = 1, limit = 12) {
-  const options = {
-    params: {
-      filter,
-      page,
-      limit,
-    },
-  };
-  const stringifiedSearchKey = JSON.stringify(options);
-  const storedValue = sessionStorage.getItem(stringifiedSearchKey);
-
-  if (storedValue) {
-    return JSON.parse(storedValue);
-  }
-
-  const result = await axios.get(
-    'https://your-energy.b.goit.study/api/filters',
-    options,
-  );
-  const { data } = result;
-
-  if (data) {
-    sessionStorage.setItem(stringifiedSearchKey, JSON.stringify(data));
-  }
-
-  return data;
-}
-
-// async function getCategoryExercises(category, page = 1, limit = 12) {
-//   const options = {
-//     params: {
-//       limit,
-//       page,
-//     },
-//   };
-
-//   options.params[category.filter] = category.name;
-
-//   const stringifiedSearch = JSON.stringify(options);
-//   const storedValue = sessionStorage.getItem(stringifiedSearch);
-
-//   if (storedValue) {
-//     return JSON.parse(storedValue);
-//   }
-
-//   const result = await axios.get(
-//     'https://your-energy.b.goit.study/api/exercises',
-//     options,
-//   );
-//   const { data } = result;
-
-//   if (data) {
-//     sessionStorage.setItem(stringifiedSearch, JSON.stringify(data));
-//   }
-
-//   return data;
-// }
-
-function getItemsPerPage() {
-  const viewportWidth = window.innerWidth;
-
-  if (viewportWidth <= 375) {
-    return MOBILE_FILTER_ITEMS_QTY;
-  }
-
-  return REST_DISPLAY_FITTER_ITEMS_QTY;
-}
-
-function drawCategoriesList(containerSelector, categories) {
-  const container = document.querySelector(containerSelector);
-
-  if (!container) {
-    console.log('Container not found');
-    return;
-  }
-  container.classList.add('exercises-categories');
-  container.classList.remove('exercises-list-container');
-
-  container.innerHTML = '';
-  const categoriesList = document.createElement('ul');
-
-  categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, (c) =>
-      drawExercisesList(c),
-    );
-    const node = document.createElement('li');
-    node.appendChild(categoryNode);
-    categoriesList.appendChild(node);
-  });
-
-  container.appendChild(categoriesList);
-}
+import { drawCategoriesList } from './exercises-categories';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const filterItems = document.querySelectorAll('.exercises-filter-list li');
@@ -107,16 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     .querySelector('.exercises-filter-button')
     .textContent.trim();
 
-  const initialCategories = await getFilterItemCategories(
-    initialFilter,
-    1,
-    getItemsPerPage(),
-  );
-
-  drawCategoriesList(
-    '.exercises-categories, .exercises-list-container',
-    initialCategories.results,
-  );
+  await drawCategoriesList(initialFilter);
 
   filterItems.forEach((item) => {
     item.addEventListener('click', async () => {
@@ -128,20 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       const buttonValue = item
         .querySelector('.exercises-filter-button')
         .textContent.trim();
-      const currentPageNumber = Number(
-        document.querySelector('.exercises-filter-current-page') || 1,
-      );
-      const itemsPerPage = getItemsPerPage();
-      const filterItemCategories = await getFilterItemCategories(
-        buttonValue,
-        currentPageNumber,
-        itemsPerPage,
-      );
 
-      drawCategoriesList(
-        '.exercises-categories, .exercises-list-container',
-        filterItemCategories.results,
-      );
+      await drawCategoriesList(buttonValue);
     });
   });
 });

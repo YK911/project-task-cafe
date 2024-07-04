@@ -9,7 +9,6 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
-  border: 1px solid rgb(var(--cl-secondary-dark));
   border-radius: var(--radius);
   color: rgb(var(--cl-white));
 
