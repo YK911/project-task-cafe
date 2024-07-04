@@ -1,4 +1,5 @@
 import capitalize from './capitalize';
+import saveExerciseId from './favorites';
 
 const exerciseRefs = {
   dialog: document.querySelector('[data-modal="exercise"]'),
@@ -14,6 +15,9 @@ const closeModal = () => exerciseRefs.dialog.close();
 const onFavouritesBtnClick = (event) => {
   const target = event.currentTarget;
   const exerciseId = target.dataset.addFavourites;
+
+  saveExerciseId(exerciseId);
+
   console.log(`Click on favourites btn ${exerciseId}`);
 };
 const onRatingBtnClick = () => {
@@ -98,7 +102,18 @@ export default async function onExerciseClick(exerciseId) {
   showModal(exerciseId);
 }
 
-exerciseRefs.closeBtn.addEventListener('click', closeModal);
+if (exerciseRefs.closeBtn) {
+  exerciseRefs.closeBtn.addEventListener('click', closeModal);
+}
 
-exerciseRefs.favouritesBtn.addEventListener('click', onFavouritesBtnClick);
-exerciseRefs.ratingBtn.addEventListener('click', onRatingBtnClick);
+if (exerciseRefs.favouritesBtn) {
+  exerciseRefs.favouritesBtn.addEventListener('click', onFavouritesBtnClick);
+}
+
+if (exerciseRefs.ratingBtn) {
+  exerciseRefs.ratingBtn.addEventListener('click', onRatingBtnClick);
+}
+
+if (exerciseRefs.exercisesLayout) {
+  exerciseRefs.exercisesLayout.addEventListener('click', onExerciseClick);
+}

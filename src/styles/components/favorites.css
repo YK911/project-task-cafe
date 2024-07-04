@@ -1,0 +1,45 @@
+h2 {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.35;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 44px;
+    line-height: 1.09;
+    margin-bottom: 32px;
+  }
+}
+
+.favorites-content {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+#exerciseListEmpty {
+  width: 554px;
+  margin: auto;
+  text-align: center;
+}
+
+.quote-ill.favorites {
+  width: 239px;
+  height: 141px;
+}
+
+.quote-reccomendation.favorites {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;
+  justify-content: center;
+  gap: 16px;*/
+  padding: 25px;
+  width: 239px;
+  height: 141px;
+}
+
+.quote-rec-container.favorites {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 16px;
+}
