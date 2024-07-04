@@ -30,9 +30,7 @@ h2 {
 .quote-reccomendation.favorites {
   display: flex;
   flex-direction: column;
-  /*align-items: center;
-  justify-content: center;
-  gap: 16px;*/
+  gap: 15px;
   padding: 25px;
   width: 239px;
   height: 141px;
@@ -42,4 +40,13 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
   gap: 16px;
+}
+
+.quote-reccomendation-title.favorites span {
+  font-size: 24px;
+}
+
+.quote-icon.favorites {
+  width: 20px;
+  height: 20px;
 }
