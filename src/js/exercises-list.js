@@ -91,11 +91,11 @@ async function getExercisesList(category, page = 1) {
 }
 
 export default async function drawExercisesList(category, page = 1) {
-  showLoader('.exercises-categories,.exercises-list-container');
+  showLoader();
 
   const data = await getExercisesList(category, page);
 
-  hideLoader('.exercises-categories,.exercises-list-container');
+  hideLoader();
 
   const container = document.querySelector(
     '.exercises-categories,.exercises-list-container',
