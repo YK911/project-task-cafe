@@ -50,8 +50,6 @@ const subscribe = async (e) => {
       },
     );
 
-    hideLoader();
-
     form.reset();
 
     iziToast.success({
@@ -83,6 +81,8 @@ const subscribe = async (e) => {
         position: 'topRight',
       });
     }
+  } finally {
+    hideLoader();
   }
 };
 
