@@ -62,10 +62,20 @@ function buildExerciseCard(exercise) {
   return card;
 }
 
+function getItemsPerPage() {
+  const viewportWidth = window.innerWidth;
+
+  if (viewportWidth < 768) {
+    return 8;
+  }
+
+  return 10;
+}
+
 async function getExercisesList(category, page = 1) {
   const params = {
     page,
-    limit: 10,
+    limit: getItemsPerPage(),
   };
 
   params[category.filter.toLowerCase()] = category.name;
