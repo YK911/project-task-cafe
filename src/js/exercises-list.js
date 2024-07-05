@@ -1,6 +1,6 @@
-import axios from 'axios';
+import state from './exercises-state';
+import updatePagination from './exercises-pagination';
 import onExerciseClick from './modals';
-import { showLoader, hideLoader } from './loader';
 
 function buildExcerciseCardDetails(exercise) {
   const templateName = '#excercise-card-detail-template';
@@ -62,40 +62,9 @@ function buildExerciseCard(exercise) {
   return card;
 }
 
-function getItemsPerPage() {
-  const viewportWidth = window.innerWidth;
-
-  if (viewportWidth < 768) {
-    return 8;
-  }
-
-  return 10;
-}
-
-async function getExercisesList(category, page = 1) {
-  const params = {
-    page,
-    limit: getItemsPerPage(),
-  };
-
-  params[category.filter.toLowerCase()] = category.name;
-
-  const response = await axios.get(
-    'https://your-energy.b.goit.study/api/exercises',
-    {
-      params,
-    },
-  );
-
-  return response.data;
-}
-
-export default async function drawExercisesList(category, page = 1) {
-  showLoader();
-
-  const data = await getExercisesList(category, page);
-
-  hideLoader();
+export default async function drawExercisesList(page = 1) {
+  state.currentPage = page;
+  const results = await state.getExercises();
 
   const container = document.querySelector(
     '.exercises-categories,.exercises-list-container',
@@ -111,7 +80,7 @@ export default async function drawExercisesList(category, page = 1) {
 
   list.classList.add('exercises-cards');
 
-  data.results.forEach((exercise) => {
+  results.forEach((exercise) => {
     const card = buildExerciseCard(exercise);
 
     card.addEventListener('click', () => {
@@ -123,25 +92,5 @@ export default async function drawExercisesList(category, page = 1) {
 
   container.appendChild(list);
 
-  if (data.totalPages > 1) {
-    const paginationContainer = document.createElement('ul');
-    paginationContainer.classList.add('pagination');
-
-    for (let i = 1; i <= data.totalPages; i += 1) {
-      const paginationItem = document.createElement('li');
-      paginationItem.classList.add('pagination-item');
-      paginationItem.textContent = i;
-
-      if (i === data.page) {
-        paginationItem.classList.add('pagination-item-current');
-      } else {
-        paginationItem.addEventListener('click', () => {
-          drawExercisesList(category, i);
-        });
-      }
-
-      paginationContainer.appendChild(paginationItem);
-      container.appendChild(paginationContainer);
-    }
-  }
+  updatePagination((p) => drawExercisesList(p));
 }
