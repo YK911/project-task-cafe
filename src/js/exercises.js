@@ -1,147 +1,51 @@
-import axios from 'axios';
+import state from './exercises-state';
+import { drawCategoriesList, updateCategoryName } from './exercises-categories';
 import {
-  MOBILE_FILTER_ITEMS_QTY,
-  REST_DISPLAY_FITTER_ITEMS_QTY,
-} from './config';
+  attachSearchListener,
+  updateSearchVisibility,
+} from './exercises-search';
 
-import getExerciseCategoryNode from './exercise-category';
-import drawExercisesList from './exercises-list';
+function drawFilter() {
+  const filterContainer = document.querySelector('.exercises-filter-list');
 
-async function getFilterItemCategories(filter, page = 1, limit = 12) {
-  const options = {
-    params: {
-      filter,
-      page,
-      limit,
-    },
-  };
-  const stringifiedSearchKey = JSON.stringify(options);
-  const storedValue = sessionStorage.getItem(stringifiedSearchKey);
+  state.filters.forEach((filter) => {
+    const item = document.createElement('li');
+    item.classList.add('exercises-filter-item');
 
-  if (storedValue) {
-    return JSON.parse(storedValue);
-  }
+    if (filter.value === state.selectedFilter.value) {
+      item.classList.add('exercises-filter-item-active');
+    }
 
-  const result = await axios.get(
-    'https://your-energy.b.goit.study/api/filters',
-    options,
-  );
-  const { data } = result;
+    const button = document.createElement('button');
+    button.setAttribute('type', 'button');
+    button.classList.add('exercises-filter-button');
+    button.textContent = filter.name;
 
-  if (data) {
-    sessionStorage.setItem(stringifiedSearchKey, JSON.stringify(data));
-  }
+    button.addEventListener('click', async (e) => {
+      e.preventDefault();
 
-  return data;
-}
-
-// async function getCategoryExercises(category, page = 1, limit = 12) {
-//   const options = {
-//     params: {
-//       limit,
-//       page,
-//     },
-//   };
-
-//   options.params[category.filter] = category.name;
-
-//   const stringifiedSearch = JSON.stringify(options);
-//   const storedValue = sessionStorage.getItem(stringifiedSearch);
-
-//   if (storedValue) {
-//     return JSON.parse(storedValue);
-//   }
-
-//   const result = await axios.get(
-//     'https://your-energy.b.goit.study/api/exercises',
-//     options,
-//   );
-//   const { data } = result;
-
-//   if (data) {
-//     sessionStorage.setItem(stringifiedSearch, JSON.stringify(data));
-//   }
-
-//   return data;
-// }
-
-function getItemsPerPage() {
-  const viewportWidth = window.innerWidth;
-
-  if (viewportWidth <= 375) {
-    return MOBILE_FILTER_ITEMS_QTY;
-  }
-
-  return REST_DISPLAY_FITTER_ITEMS_QTY;
-}
-
-function drawCategoriesList(containerSelector, categories) {
-  const container = document.querySelector(containerSelector);
-
-  if (!container) {
-    console.log('Container not found');
-    return;
-  }
-  container.classList.add('exercises-categories');
-  container.classList.remove('exercises-list-container');
-
-  container.innerHTML = '';
-  const categoriesList = document.createElement('ul');
-
-  categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, (c) =>
-      drawExercisesList(c),
-    );
-    const node = document.createElement('li');
-    node.appendChild(categoryNode);
-    categoriesList.appendChild(node);
-  });
-
-  container.appendChild(categoriesList);
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const filterItems = document.querySelectorAll('.exercises-filter-list li');
-
-  const initialFilter = filterItems[0]
-    .querySelector('.exercises-filter-button')
-    .textContent.trim();
-
-  const initialCategories = await getFilterItemCategories(
-    initialFilter,
-    1,
-    getItemsPerPage(),
-  );
-
-  drawCategoriesList(
-    '.exercises-categories, .exercises-list-container',
-    initialCategories.results,
-  );
-
-  filterItems.forEach((item) => {
-    item.addEventListener('click', async () => {
+      const filterItems = filterContainer.querySelectorAll(
+        '.exercises-filter-item',
+      );
       filterItems.forEach((filterItem) => {
         filterItem.classList.remove('exercises-filter-item-active');
       });
+
       item.classList.add('exercises-filter-item-active');
-
-      const buttonValue = item
-        .querySelector('.exercises-filter-button')
-        .textContent.trim();
-      const currentPageNumber = Number(
-        document.querySelector('.exercises-filter-current-page') || 1,
-      );
-      const itemsPerPage = getItemsPerPage();
-      const filterItemCategories = await getFilterItemCategories(
-        buttonValue,
-        currentPageNumber,
-        itemsPerPage,
-      );
-
-      drawCategoriesList(
-        '.exercises-categories, .exercises-list-container',
-        filterItemCategories.results,
-      );
+      state.selectFilter(filter);
+      updateCategoryName();
+      updateSearchVisibility();
+      await drawCategoriesList();
     });
+
+    item.appendChild(button);
+    filterContainer.appendChild(item);
   });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  state.selectFilter(state.filters[0]);
+  drawFilter();
+  attachSearchListener();
+  await drawCategoriesList();
 });

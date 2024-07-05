@@ -1,25 +1,23 @@
 <section class="exercises">
   <div class="container">
-    <h2 class="exercises-header">Exercises</h2>
-    <div class="exercises-filters">
-      <ul class="exercises-filter-list">
-        <li class="exercises-filter-item exercises-filter-item-active">
-          <button class="exercises-filter-button">Muscles</button>
-        </li>
-        <li class="exercises-filter-item">
-          <button class="exercises-filter-button">Body parts</button>
-        </li>
-        <li class="exercises-filter-item">
-          <button class="exercises-filter-button">Equipment</button>
-        </li>
-      </ul>
+    <div class="exercises-header-container">
+      <h2 class="exercises-header">Exercises
+        <span class="exercises-header-selected-category visually-hidden">/ <span class="exercises-header-category-name"></span></span>
+      </h2>
+      <div class="exercises-filters">
+        <div class="exercises-search-container visually-hidden">
+          <input
+            type="text"
+            name="exercises-search"
+            class="exercises-search"
+            placeholder="Search"
+          >
+        </div>
+        <ul class="exercises-filter-list"></ul>
+      </div>
     </div>
     <div class="exercises-container">
-      <div class="exercises-categories">
-        <ul class="categories-list"></ul>
-        <ul class="exercises-list" data-exercise></ul>
-        <div class="exercises-pagination"></div>
-      </div>
+      <div class="exercises-categories"></div>
       <template
         file="/templates/exercises/blockquote.html"
         recomendation-icon="./assets/icons.svg#dumbbells" />
