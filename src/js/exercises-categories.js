@@ -21,8 +21,8 @@ function getExerciseCategoryNode(category, clickHandler) {
   return categoryItem;
 }
 
-async function drawCategoriesList(filterName, page = 1) {
-  const categories = await state.getCategories(filterName, page);
+async function drawCategoriesList(page = 1) {
+  const categories = await state.getCategories(page);
 
   const container = document.querySelector(
     '.exercises-categories, .exercises-list-container',
@@ -52,7 +52,7 @@ async function drawCategoriesList(filterName, page = 1) {
 
   container.appendChild(categoriesList);
 
-  updatePagination((p) => drawCategoriesList(filterName, p));
+  updatePagination((p) => drawCategoriesList(p));
 }
 
 export { drawCategoriesList, getExerciseCategoryNode };
