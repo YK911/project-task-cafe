@@ -29,7 +29,7 @@ export default defineConfig({
       fix: true,
     }),
     injectHTML({
-      tagName: 'load', // Default is `load`
+      tagName: 'template', // Default is `load`
       sourceAttr: 'file', // Default is `src`
     }),
   ],
