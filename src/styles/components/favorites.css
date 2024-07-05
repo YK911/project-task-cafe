@@ -56,6 +56,21 @@ h2 {
   height: 517px;
 }
 
-.exercises-list-container.favorites > .exercises-cards > .excercise-card-item > .card-header > .card-rating {
+.exercises-list-container.favorites
+  > .exercises-cards
+  > .excercise-card-item
+  > .card-header
+  > .card-rating {
   display: none;
+}
+
+.remove-btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.excercise-card-item {
+  .card-header {
+    gap: 8px;
+  }
 }
