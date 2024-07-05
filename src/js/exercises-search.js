@@ -3,6 +3,11 @@ import drawExercisesList from './exercises-list';
 
 function attachSearchListener() {
   const searchInput = document.querySelector('.exercises-search');
+
+  if (!searchInput) {
+    return;
+  }
+
   searchInput.addEventListener('input', (e) => {
     state.setKeyword(e.target.value);
     drawExercisesList();
@@ -15,6 +20,10 @@ function clearSearchInput() {
 
 function updateSearchVisibility() {
   const container = document.querySelector('.exercises-search-container');
+
+  if (!container) {
+    return;
+  }
 
   if (state.selectedCategory) {
     container.classList.remove('visually-hidden');
