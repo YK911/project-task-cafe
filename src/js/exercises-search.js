@@ -8,8 +8,26 @@ function attachSearchListener() {
     return;
   }
 
+  const searchIcon = document.querySelector('.search-icon');
+
   searchInput.addEventListener('input', (e) => {
+    if (e.target.value) {
+      searchIcon?.classList.add('search-active');
+    } else {
+      searchIcon?.classList.remove('search-active');
+    }
+
     state.setKeyword(e.target.value);
+    drawExercisesList();
+  });
+
+  searchIcon?.addEventListener('click', () => {
+    if (!state.keyword) {
+      return;
+    }
+    searchIcon?.classList.remove('search-active');
+    searchInput.value = '';
+    state.setKeyword('');
     drawExercisesList();
   });
 }
