@@ -28,8 +28,9 @@
     <symbol id="x-mark" viewBox="0 0 32 32">
       <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M22.667 9.333 9.334 22.666M9.333 9.333l13.333 13.333"/>
     </symbol>
-    <symbol id="search" viewBox="0 0 32 32">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667S20.558 3.999 14.667 3.999 4 8.775 4 14.666s4.776 10.667 10.667 10.667zM28 28l-5.8-5.8"/>
+    <symbol id="search" viewBox="0 0 18 18">
+      <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" fill="none"/>
+      <path d="M15.7498 15.75L12.4873 12.4875"/>
     </symbol>
     <symbol id="arrow" viewBox="0 0 33 32">
       <path d="M17.62 5.478v25.528h-2.717V5.478L2.14 18.242l-1.92-1.92L16.26.278 32.304 16.32l-1.92 1.92L17.618 5.479Z"/>
