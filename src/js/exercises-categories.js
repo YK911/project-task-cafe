@@ -1,6 +1,7 @@
 import state from './exercises-state';
 import drawExercisesList from './exercises-list';
 import updatePagination from './exercises-pagination';
+import { updateSearchVisibility } from './exercises-search';
 
 function getExerciseCategoryNode(category, clickHandler) {
   const categoryItem = document
@@ -19,6 +20,21 @@ function getExerciseCategoryNode(category, clickHandler) {
   }
 
   return categoryItem;
+}
+
+function updateCategoryName() {
+  if (!state.selectedCategory) {
+    document
+      .querySelector('.exercises-header-selected-category')
+      .classList.add('visually-hidden');
+    document.querySelector('.exercises-header-category-name').textContent = '';
+    return;
+  }
+  document.querySelector('.exercises-header-category-name').textContent =
+    state.selectedCategory.name;
+  document
+    .querySelector('.exercises-header-selected-category')
+    .classList.remove('visually-hidden');
 }
 
 async function drawCategoriesList(page = 1) {
@@ -45,6 +61,8 @@ async function drawCategoriesList(page = 1) {
   categories.forEach((category) => {
     const categoryNode = getExerciseCategoryNode(category, (c) => {
       state.selectCategory(c);
+      updateCategoryName();
+      updateSearchVisibility();
       drawExercisesList();
     });
     const node = document.createElement('li');
@@ -57,4 +75,4 @@ async function drawCategoriesList(page = 1) {
   updatePagination((p) => drawCategoriesList(p));
 }
 
-export { drawCategoriesList, getExerciseCategoryNode };
+export { drawCategoriesList, getExerciseCategoryNode, updateCategoryName };

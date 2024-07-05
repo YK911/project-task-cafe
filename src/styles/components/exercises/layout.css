@@ -1,10 +1,46 @@
+.exercises-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 20px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
 .exercises-header {
   color: rgb(var(--cl-primary-dark));
   font-size: 28px;
   font-weight: 400;
   line-height: 38px;
-  letter-spacing: -0.56px;
-  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 44px;
+    line-height: 48px;
+  }
+
+  .exercises-header-category-name {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: rgb(var(--cl-primary-dark) / 50%);
+
+    @media only screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
 }
 
 .exercises-filter-button {
@@ -23,15 +59,34 @@
 
 .exercises-filters {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: flex-start;
 
   @media only screen and (min-width: 768px) {
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
   }
 
   @media only screen and (min-width: 1280px) {
     justify-content: flex-end;
   }
+}
+
+.exercises-search-container {
+  position: relative;
+  border: 1px solid rgb(var(--cl-primary-dark));
+  border-radius: var(--radius-lg);
+  padding: 11px 14px;
+}
+
+.exercises-search {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(var(--cl-primary-dark));
 }
 
 .exercises-filter-list {

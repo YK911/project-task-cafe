@@ -1,5 +1,9 @@
 import state from './exercises-state';
-import { drawCategoriesList } from './exercises-categories';
+import { drawCategoriesList, updateCategoryName } from './exercises-categories';
+import {
+  attachSearchListener,
+  updateSearchVisibility,
+} from './exercises-search';
 
 function drawFilter() {
   const filterContainer = document.querySelector('.exercises-filter-list');
@@ -29,6 +33,8 @@ function drawFilter() {
 
       item.classList.add('exercises-filter-item-active');
       state.selectFilter(filter);
+      updateCategoryName();
+      updateSearchVisibility();
       await drawCategoriesList();
     });
 
@@ -40,5 +46,6 @@ function drawFilter() {
 document.addEventListener('DOMContentLoaded', async () => {
   state.selectFilter(state.filters[0]);
   drawFilter();
+  attachSearchListener();
   await drawCategoriesList();
 });

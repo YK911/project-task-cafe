@@ -1,8 +1,20 @@
 <section class="exercises">
   <div class="container">
-    <h2 class="exercises-header">Exercises</h2>
-    <div class="exercises-filters">
-      <ul class="exercises-filter-list"></ul>
+    <div class="exercises-header-container">
+      <h2 class="exercises-header">Exercises
+        <span class="exercises-header-selected-category visually-hidden">/ <span class="exercises-header-category-name"></span></span>
+      </h2>
+      <div class="exercises-filters">
+        <div class="exercises-search-container visually-hidden">
+          <input
+            type="text"
+            name="exercises-search"
+            class="exercises-search"
+            placeholder="Search"
+          >
+        </div>
+        <ul class="exercises-filter-list"></ul>
+      </div>
     </div>
     <div class="exercises-container">
       <div class="exercises-categories"></div>
