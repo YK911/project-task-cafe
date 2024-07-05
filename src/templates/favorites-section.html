@@ -5,17 +5,21 @@
     <div class="exercises-container">
       <div class="exercises-list-container">
         <ul class="exercises-cards" id="exerciseList"></ul>
-        <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+        <p id="exerciseListEmpty" class="visually-hidden">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
       </div>
 
-      <template
-      file="/templates/exercises/blockquote.html"
-      favorites-page-class="favorites"
-      favorites-page-hidden="visually-hidden"
-      recomendation-icon="./assets/icons.svg#dumbbells-no-bg" />
-
+      <load
+        file="/templates/exercises/blockquote.html"
+        favorites-page-class="favorites"
+        favorites-page-hidden="visually-hidden"
+        recomendation-icon="./assets/icons.svg#dumbbells-no-bg"
+      />
     </div>
   </div>
 </section>
-<template file="/templates/exercises/excercise-card.html" />
-<template file="/templates/exercises/excercise-card-detail.html" />
+<load file="/templates/exercises/excercise-card.html" />
+<load file="/templates/exercises/excercise-card-detail.html" />
