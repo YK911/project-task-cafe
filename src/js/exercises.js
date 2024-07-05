@@ -48,6 +48,10 @@ function drawFilter() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  if (!document.querySelector('.exercises-filters')) {
+    return;
+  }
+
   state.selectFilter(state.filters[0]);
   drawFilter();
   attachSearchListener();
