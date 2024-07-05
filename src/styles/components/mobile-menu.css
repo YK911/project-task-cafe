@@ -37,11 +37,14 @@
     transform: translateX(100%);
   }
 }
-body:has(dialog[open]) {
-  overflow-y: hidden;
-}
-body:has(dialog) {
+
+body:has(dialog),
+body:has(.backdrop.is-hidden) {
   overflow-y: scroll;
+}
+body:has(dialog[open]),
+body:has(.backdrop) {
+  overflow-y: hidden;
 }
 
 .menu-toggle {
