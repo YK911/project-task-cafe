@@ -1,5 +1,6 @@
 import { getExerciseById, buildExerciseCard } from './exercise-service';
 import { showLoader, hideLoader } from './loader';
+import { removeExerciseId } from './exercises-shared';
 
 // Function to display exercise IDs from local storage
 function displayExerciseIds() {
@@ -26,13 +27,39 @@ function displayExerciseIds() {
     });
 
     // Wait for all promises to resolve before appending to the DOM
-    Promise.all(exercisePromises).then((cards) => {
-      cards.forEach((card) => {
-        fragment.appendChild(card);
+    Promise.all(exercisePromises)
+      .then((cards) => {
+        cards.forEach((card) => {
+          fragment.appendChild(card);
+        });
+        hideLoader();
+        exerciseList.appendChild(fragment);
+      })
+      .then(() => {
+        const cardCategoryDivs = document.querySelectorAll('.card-category');
+
+        cardCategoryDivs.forEach((cardCategoryDiv) => {
+          const romoveButton = document.createElement('button');
+          romoveButton.className = 'remove-button';
+          romoveButton.textContent = 'X';
+
+          // Get the data-id attribute value from the parent element
+          const parentDiv = cardCategoryDiv.closest('.excercise-card-item');
+          const dataId = parentDiv.getAttribute('data-id');
+
+          // Set the data-id attribute on the new div
+          romoveButton.setAttribute('data-id', dataId);
+
+          // Insert the new div after each card-category div
+          cardCategoryDiv.insertAdjacentElement('afterend', romoveButton);
+
+          romoveButton.addEventListener('click', () => {
+            const clickedDataId = romoveButton.getAttribute('data-id');
+            removeExerciseId(clickedDataId);
+            displayExerciseIds();
+          });
+        });
       });
-      hideLoader();
-      exerciseList.appendChild(fragment);
-    });
   }
 }
 
