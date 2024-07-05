@@ -3,6 +3,12 @@
     <h2>Favorites</h2>
 
     <div class="exercises-container">
+      <template
+        file="/templates/exercises/blockquote.html"
+        block-place="favorites-quote"
+        page-img="./assets/images/quote/fav-ill"
+        is-text-hidden="visually-hidden"
+      />
       <div class="exercises-list-container favorites">
         <ul class="exercises-cards" id="exerciseList"></ul>
         <p class="visually-hidden" id="exerciseListEmpty">
@@ -11,13 +17,6 @@
           for easier access in the future.
         </p>
       </div>
-
-      <template
-        file="/templates/exercises/blockquote.html"
-        block-place="favorites-quote"
-        page-img="./assets/images/quote/fav-ill"
-        is-text-hidden="visually-hidden"
-      />
     </div>
   </div>
 </section>
