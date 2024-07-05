@@ -6,7 +6,7 @@ function showLoaderWithTimeout() {
 
 export function showLoader() {
   // showing loader only if the request takes more than half a second, otherwise it looks cringe
-  loaderTimeout = setTimeout(showLoaderWithTimeout, 500);
+  loaderTimeout = setTimeout(showLoaderWithTimeout, 100);
 }
 
 export function hideLoader() {
