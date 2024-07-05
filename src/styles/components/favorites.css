@@ -50,3 +50,8 @@ h2 {
   width: 20px;
   height: 20px;
 }
+
+.exercises-list-container.favorites {
+  overflow: scroll;
+  height: 517px;
+}
