@@ -62,8 +62,9 @@ function buildExerciseCard(exercise) {
   return card;
 }
 
-export default async function drawExercisesList(category, page = 1) {
-  const results = await state.getExercises(category, page);
+export default async function drawExercisesList(page = 1) {
+  state.currentPage = page;
+  const results = await state.getExercises();
 
   const container = document.querySelector(
     '.exercises-categories,.exercises-list-container',
@@ -91,5 +92,5 @@ export default async function drawExercisesList(category, page = 1) {
 
   container.appendChild(list);
 
-  updatePagination((p) => drawExercisesList(category, p));
+  updatePagination((p) => drawExercisesList(p));
 }

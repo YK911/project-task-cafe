@@ -22,7 +22,8 @@ function getExerciseCategoryNode(category, clickHandler) {
 }
 
 async function drawCategoriesList(page = 1) {
-  const categories = await state.getCategories(page);
+  state.currentPage = page;
+  const categories = await state.getCategories();
 
   const container = document.querySelector(
     '.exercises-categories, .exercises-list-container',
@@ -42,9 +43,10 @@ async function drawCategoriesList(page = 1) {
   categoriesList.classList.add('categories-cards');
 
   categories.forEach((category) => {
-    const categoryNode = getExerciseCategoryNode(category, (c) =>
-      drawExercisesList(c),
-    );
+    const categoryNode = getExerciseCategoryNode(category, (c) => {
+      state.selectCategory(c);
+      drawExercisesList();
+    });
     const node = document.createElement('li');
     node.appendChild(categoryNode);
     categoriesList.appendChild(node);

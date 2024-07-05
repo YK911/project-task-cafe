@@ -2,6 +2,8 @@ import state from './exercises-state';
 import { drawCategoriesList } from './exercises-categories';
 
 document.addEventListener('DOMContentLoaded', async () => {
+  state.selectFilter(state.filters[0]);
+
   const filterContainer = document.querySelector('.exercises-filter-list');
 
   state.filters.forEach((filter) => {
@@ -27,8 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         filterItem.classList.remove('exercises-filter-item-active');
       });
 
-      state.selectedFilter = filter;
       item.classList.add('exercises-filter-item-active');
+      state.selectFilter(filter);
       await drawCategoriesList();
     });
 

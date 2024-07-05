@@ -16,25 +16,36 @@ export default {
       value: 'equipment',
     },
   ],
-  selectedFilter: {
-    name: 'Muscles',
-    value: 'muscles',
-  },
+  selectedFilter: null,
+  selectedCategory: null,
+  keyword: '',
   currentPage: 1,
   totalPages: 1,
   isMobile: () => window.innerWidth < 768,
+  selectFilter(filter) {
+    this.selectedFilter = filter;
+    this.selectedCategory = null;
+    this.page = 1;
+  },
+  selectCategory(category) {
+    this.selectedCategory = category;
+    this.page = 1;
+  },
+  setKeyword(keyword) {
+    this.keyword = keyword;
+    this.page = 1;
+  },
   async getRequestResults(apiUrl, options) {
     showLoader();
     const { data } = await axios.get(apiUrl, options);
-    this.currentPage = parseInt(data.page, 10);
     this.totalPages = data.totalPages;
     hideLoader();
     return data.results;
   },
-  async getCategories(page = 1) {
+  async getCategories() {
     const params = {
       filter: this.selectedFilter.name,
-      page,
+      page: this.currentPage,
       limit: this.isMobile() ? 9 : 12,
     };
 
@@ -43,13 +54,17 @@ export default {
       { params },
     );
   },
-  async getExercises(category, page = 1) {
+  async getExercises() {
     const params = {
-      page,
+      page: this.currentPage,
       limit: this.isMobile() ? 8 : 10,
     };
 
-    params[this.selectedFilter.value] = category.name;
+    params[this.selectedFilter.value] = this.selectedCategory.name;
+
+    if (this.keyword) {
+      params.keyword = this.keyword;
+    }
 
     return this.getRequestResults(
       'https://your-energy.b.goit.study/api/exercises',
