@@ -16,4 +16,19 @@ function saveExerciseId(id) {
   }
 }
 
-export default saveExerciseId;
+// Function to remove exercise ID from local storage
+function removeExerciseId(id) {
+  const exerciseId = id.trim();
+
+  if (exerciseId) {
+    const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    const index = exercises.indexOf(exerciseId);
+    if (index !== -1) {
+      exercises.splice(index, 1);
+      localStorage.setItem('favorites', JSON.stringify(exercises));
+    }
+  }
+}
+
+export { saveExerciseId, removeExerciseId };
