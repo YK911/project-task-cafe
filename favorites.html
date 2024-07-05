@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YOUR ENERGY | Favorites page</title>
     <script type="module" crossorigin src="/project-task-cafe/assets/vendor-CtRQQMrb.js"></script>
-    <script type="module" crossorigin src="/project-task-cafe/assets/main-CU_DPuhy.js"></script>
+    <script type="module" crossorigin src="/project-task-cafe/assets/main-FR1xpkhm.js"></script>
     <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-pbv_zplY.css">
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-ZX_rR7Ly.css">
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-DY3hIi0T.css">
   </head>
   <body class="favorites">
     <header class="header">
@@ -85,7 +85,13 @@
       <section class="favorites">
   <div class="container">
     <h2>Favorites</h2>
-    <div class="favorites-content">
+
+    <div class="exercises-container">
+      <div class="exercises-list-container">
+        <ul class="exercises-cards" id="exerciseList"></ul>
+        <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      </div>
+
       <article class="quote">
   <h2 class="visually-hidden">Quote of the day</h2>
   <div class="quote-block">
@@ -153,11 +159,10 @@
 </article>
 
 
-      <ul id="exerciseList"></ul>
-      <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
-
-      <div class="excercise-cards">
-        <template class="js-exercise-card" id="excercise-card-template">
+    </div>
+  </div>
+</section>
+<template class="js-exercise-card" id="excercise-card-template">
   <li class="card excercise-card-item">
     <div class="card-header">
       <div class="card-category"></div>
@@ -187,18 +192,13 @@
   </li>
 </template>
 
-        <template class="js-exercise-card-details" id="excercise-card-detail-template">
+<template class="js-exercise-card-details" id="excercise-card-detail-template">
   <li class="card-details-item">
     <span class="card-details-title"></span>
     <span class="card-details-value"></span>
   </li>
 </template>
 
-      </div>
-    </div>
-
-  </div>
-</section>
 
     </main>
     <div class="loader-overlay">
