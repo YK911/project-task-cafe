@@ -39,7 +39,9 @@ function drawFilter() {
     });
 
     item.appendChild(button);
-    filterContainer.appendChild(item);
+    if (filterContainer) {
+      filterContainer.appendChild(item);
+    }
   });
 }
 

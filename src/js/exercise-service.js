@@ -1,4 +1,5 @@
 import axios from 'axios';
+import onExerciseClick from './modals';
 
 async function getExerciseById(id) {
   const response = await axios.get(
@@ -53,7 +54,7 @@ function buildExerciseCard(exercise) {
   const startButton = card.querySelector('.start-button');
   startButton.addEventListener('click', (event) => {
     event.preventDefault();
-    // onExerciseClick(exercise[id]);
+    onExerciseClick(exercise[id]);
   });
 
   // .card-title

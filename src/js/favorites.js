@@ -36,24 +36,7 @@ function displayExerciseIds() {
   }
 }
 
-// Function to save exercise ID to local storage
-function saveExerciseId(id) {
-  const exerciseId = id.trim();
-
-  if (exerciseId) {
-    const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
-
-    if (!exercises.includes(exerciseId)) {
-      exercises.push(exerciseId);
-      localStorage.setItem('favorites', JSON.stringify(exercises));
-      displayExerciseIds();
-    }
-  }
-}
-
 // Load and display exercise IDs when the page is loaded
 window.onload = () => {
   displayExerciseIds();
 };
-
-export default saveExerciseId;

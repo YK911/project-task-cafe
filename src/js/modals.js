@@ -1,5 +1,5 @@
 import capitalize from './capitalize';
-import saveExerciseId from './favorites';
+import saveExerciseId from './exercises-shared';
 
 const exerciseRefs = {
   dialog: document.querySelector('[data-modal="exercise"]'),
