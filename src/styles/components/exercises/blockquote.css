@@ -1,3 +1,10 @@
+/* #region Modifiers for pages*/
+.quote.home-quote {
+}
+.quote.favorites-quote {
+}
+/* #endregion */
+
 .quote {
   display: grid;
   row-gap: 20px;
@@ -13,7 +20,6 @@
     grid-template-columns: 1fr;
   }
 }
-
 .quote-block {
   display: flex;
   gap: 18px;
@@ -25,16 +31,13 @@
     padding: 40px;
   }
 }
-
 .quote-body {
   position: relative;
 }
-
 .quote-title {
   color: rgb(var(--cl-primary-light));
   margin-bottom: 8px;
 }
-
 .quote-desc {
   margin-bottom: 16px;
   font-size: 14px;
@@ -48,16 +51,13 @@
     margin-bottom: 8px;
   }
 }
-
 .quote-author {
   font-size: 14px;
   color: rgb(var(--cl-primary-light));
 }
-
 .quote-icon {
   flex-shrink: 0;
 }
-
 .quote-commas {
   position: absolute;
   top: 0;
@@ -69,7 +69,6 @@
     height: 24px;
   }
 }
-
 .quote-ill {
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -82,7 +81,6 @@
     object-position: center;
   }
 }
-
 .quote-reccomendation {
   display: flex;
   gap: 16px;
@@ -125,7 +123,6 @@
     overflow: hidden;
   }
 }
-
 .quote-rec-container {
   display: flex;
   flex-direction: column;
