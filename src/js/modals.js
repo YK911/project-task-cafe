@@ -53,6 +53,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
         loading="lazy"
       />
     </div>
+    <div class="modal-details">
     <h2 class="modal-caption">${capitalize(name)}</h2>
     <div class="modal-rating">
       <p>${rating}</p>
@@ -86,7 +87,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
         <p class="modal-meta-info">${burnedCalories}/${time} min</p>
       </li>
     </ul>
-    <p class="modal-desc">${description}</p>`;
+    <p class="modal-desc">${description}</p></div>`;
 };
 
 export default async function onExerciseClick(exerciseId) {
