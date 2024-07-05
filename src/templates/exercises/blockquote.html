@@ -1,4 +1,4 @@
-<article class="quote">
+<article class="quote {=$block-place}">
   <h2 class="visually-hidden">Quote of the day</h2>
   <div class="quote-block">
     <svg class="quote-icon" width="34" height="32">
@@ -17,58 +17,49 @@
       </svg>
     </blockquote>
   </div>
-  <div class="quote-rec-container {=$favorites-page-class}">
-    <div class="quote-ill {=$favorites-page-class}">
-      <picture>
-        <source
-          srcset="
-            ./assets/images/quote-ill.avif    1x,
-            ./assets/images/quote-ill@2x.avif 2x
-          "
-          type="image/avif"
-        />
-        <source
-          srcset="
-            ./assets/images/quote-ill.webp    1x,
-            ./assets/images/quote-ill@2x.webp 2x
-          "
-          type="image/webp"
-        />
-        <source
-          srcset="
-            ./assets/images/quote-ill.jpg    1x,
-            ./assets/images/quote-ill@2x.jpg 2x
-          "
-          type="image/jpg"
-        />
-        <img
-          src="./assets/images/quote-ill.jpg"
-          alt=""
-          width="335"
-          height="242"
-          loading="lazy"
-        />
-      </picture>
-    </div>
-    <div class="quote-reccomendation {=$favorites-page-class}">
-      <svg class="quote-icon {=$favorites-page-class}" width="34" height="34">
-        <use href="{=$recomendation-icon}"></use>
+  <div class="quote-ill">
+    <picture>
+      <source
+        srcset="{=$page-img}.avif 1x, {=$page-img}@2x.avif 2x"
+        type="image/avif"
+      />
+      <source
+        srcset="{=$page-img}.webp 1x, {=$page-img}@2x.webp 2x"
+        type="image/webp"
+      />
+      <source
+        srcset="{=$page-img}.jpg 1x, {=$page-img}@2x.jpg 2x"
+        type="image/jpg"
+      />
+      <img
+        src="{=$page-img}.jpg"
+        alt=""
+        width="335"
+        height="242"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+  <div class="quote-reccomendation">
+    <div class="quote-icon">
+      <svg width="20" height="20">
+        <use href="./assets/icons.svg#dumbbells"></use>
       </svg>
-      <div class="quote-reccomendation-body">
-        <h3 class="quote-reccomendation-title {=$favorites-page-class}">
-          <span>110 min</span>
-          Daily norm of sports
-        </h3>
-        <p class="quote-reccomendation-desc {=$favorites-page-hidden}">
-          The World Health Organization recommends at least 150 minutes of
-          moderate-intensity aerobic physical activity throughout the week for
-          adults aged 18-64. However, what happens if we adjust that number to 110
-          minutes every day? While it might seem like a high number to hit,
-          dedicating 110 minutes daily to sporting activities may offer
-          unparalleled benefits to physical health, mental well-being, and overall
-          quality of life.
-        </p>
-      </div>
+    </div>
+    <div class="quote-reccomendation-body">
+      <h3 class="quote-reccomendation-title">
+        <span>110 min</span>
+        Daily norm of sports
+      </h3>
+      <p class="quote-reccomendation-desc {=$is-text-hidden}">
+        The World Health Organization recommends at least 150 minutes of
+        moderate-intensity aerobic physical activity throughout the week for
+        adults aged 18-64. However, what happens if we adjust that number to 110
+        minutes every day? While it might seem like a high number to hit,
+        dedicating 110 minutes daily to sporting activities may offer
+        unparalleled benefits to physical health, mental well-being, and overall
+        quality of life.
+      </p>
     </div>
   </div>
 </article>
