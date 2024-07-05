@@ -92,19 +92,10 @@
   stroke: rgb(var(--cl-primary-dark));
 }
 
-.background-card-icon {
+.card-icon {
   margin-top: 4px;
   min-width: 24px;
   min-height: 24px;
   width: 24px;
   height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgb(var(--cl-primary-dark));
-  border-radius: 50%;
-
-  .card-icon {
-    fill: rgb(var(--cl-primary-light));
-  }
 }
