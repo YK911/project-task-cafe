@@ -55,3 +55,7 @@ h2 {
   overflow: scroll;
   height: 517px;
 }
+
+.exercises-list-container.favorites > .exercises-cards > .excercise-card-item > .card-header > .card-rating {
+  display: none;
+}
