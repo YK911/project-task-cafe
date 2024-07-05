@@ -1,9 +1,7 @@
 import state from './exercises-state';
 import { drawCategoriesList } from './exercises-categories';
 
-document.addEventListener('DOMContentLoaded', async () => {
-  state.selectFilter(state.filters[0]);
-
+function drawFilter() {
   const filterContainer = document.querySelector('.exercises-filter-list');
 
   state.filters.forEach((filter) => {
@@ -37,6 +35,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     item.appendChild(button);
     filterContainer.appendChild(item);
   });
+}
 
+document.addEventListener('DOMContentLoaded', async () => {
+  state.selectFilter(state.filters[0]);
+  drawFilter();
   await drawCategoriesList();
 });
