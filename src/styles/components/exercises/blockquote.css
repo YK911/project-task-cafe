@@ -1,7 +1,105 @@
 /* #region Modifiers for pages*/
 .quote.home-quote {
+  .quote-icon {
+    --cl-dumbbells: rgb(var(--cl-primary-light));
+
+    width: 34px;
+    height: 34px;
+    background: rgb(var(--cl-primary-dark));
+    border-radius: 50%;
+  }
+
+  .quote-ill {
+    img {
+      max-block-size: 397px;
+      height: 397px;
+      max-inline-size: 596px;
+      width: 596px;
+      object-position: -131px -11px;
+
+      @media only screen and (min-width: 768px) {
+        max-block-size: 402px;
+        height: 402px;
+        max-inline-size: 603px;
+        width: 603px;
+        object-position: -170px -8px;
+      }
+      @media only screen and (min-width: 1280px) {
+        max-block-size: 457px;
+        height: 457px;
+        max-inline-size: 685px;
+        width: 685px;
+        object-position: -112px -6px;
+      }
+    }
+  }
 }
+
 .quote.favorites-quote {
+  grid-template-areas:
+    'quote'
+    'recommendation'
+    'illustration';
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'quote quote'
+      'recommendation illustration';
+    gap: 16px;
+  }
+
+  .quote-block {
+    grid-area: quote;
+  }
+  .quote-ill {
+    grid-area: illustration;
+    max-width: 335px;
+    max-height: 119px;
+
+    img {
+      height: 255px;
+      width: 381px;
+      max-block-size: 255px;
+      max-inline-size: 381px;
+      object-position: 0 -11px;
+
+      @media only screen and (min-width: 768px) {
+        object-position: -10px -4px;
+      }
+      @media only screen and (min-width: 1440px) {
+        object-position: -65px -6px;
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      max-width: 344px;
+      max-height: 141px;
+    }
+  }
+  .quote-reccomendation {
+    grid-area: recommendation;
+
+    flex-direction: column;
+    gap: 15px;
+
+    @media only screen and (min-width: 768px) {
+      padding: 25px;
+    }
+  }
+  .quote-reccomendation-title {
+    margin-bottom: 0;
+    span {
+      margin-bottom: 6px;
+    }
+  }
+  .quote-icon {
+    --cl-dumbbells-cirlce: transparent;
+    --cl-dumbbells: rgb(var(--cl-primary-dark));
+
+    width: 20px;
+    height: 20px;
+  }
 }
 /* #endregion */
 
@@ -57,6 +155,10 @@
 }
 .quote-icon {
   flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .quote-commas {
   position: absolute;
@@ -75,10 +177,8 @@
   max-height: 242px;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     object-position: center;
+    aspect-ratio: 1 / 1;
   }
 }
 .quote-reccomendation {
