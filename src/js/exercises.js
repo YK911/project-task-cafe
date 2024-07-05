@@ -8,6 +8,10 @@ import {
 function drawFilter() {
   const filterContainer = document.querySelector('.exercises-filter-list');
 
+  if (!filterContainer) {
+    return;
+  }
+
   state.filters.forEach((filter) => {
     const item = document.createElement('li');
     item.classList.add('exercises-filter-item');
@@ -46,6 +50,10 @@ function drawFilter() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  if (!document.querySelector('.exercises-filters')) {
+    return;
+  }
+
   state.selectFilter(state.filters[0]);
   drawFilter();
   attachSearchListener();

@@ -93,6 +93,22 @@
   pointer-events: none;
   stroke: rgb(var(--cl-primary-dark));
   stroke-width: 1.5;
+
+  .search-icon-x {
+    display: none;
+  }
+
+  &.search-active {
+    cursor: pointer;
+    pointer-events: all;
+
+    .search-icon-search {
+      display: none;
+    }
+    .search-icon-x {
+      display: inline-block;
+    }
+  }
 }
 
 .exercises-search {
