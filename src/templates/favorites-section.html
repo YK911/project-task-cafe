@@ -4,18 +4,22 @@
     <div class="favorites-content">
       <template
         file="/templates/exercises/blockquote.html"
-        favorites-page-class="favorites"
-        favorites-page-hidden="visually-hidden"
-        recomendation-icon="./assets/icons.svg#dumbbells-no-bg" />
+        block-place="favorites-quote"
+        page-img="./assets/images/quote/fav-ill"
+        is-text-hidden="visually-hidden"
+      />
 
       <ul id="exerciseList"></ul>
-      <p id="exerciseListEmpty" class="visually-hidden">It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      <p id="exerciseListEmpty" class="visually-hidden">
+        It appears that you haven't added any exercises to your favorites yet.
+        To get started, you can add exercises that you like to your favorites
+        for easier access in the future.
+      </p>
 
       <div class="excercise-cards">
         <template file="/templates/exercises/excercise-card.html" />
         <template file="/templates/exercises/excercise-card-detail.html" />
       </div>
     </div>
-
   </div>
 </section>

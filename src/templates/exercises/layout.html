@@ -1,8 +1,11 @@
 <section class="exercises">
   <div class="container">
     <div class="exercises-header-container">
-      <h2 class="exercises-header">Exercises
-        <span class="exercises-header-selected-category visually-hidden">/ <span class="exercises-header-category-name"></span></span>
+      <h2 class="exercises-header">
+        Exercises
+        <span class="exercises-header-selected-category visually-hidden"
+          >/ <span class="exercises-header-category-name"></span
+        ></span>
       </h2>
       <div class="exercises-filters">
         <div class="exercises-search-container visually-hidden">
@@ -11,7 +14,7 @@
             name="exercises-search"
             class="exercises-search"
             placeholder="Search"
-          >
+          />
         </div>
         <ul class="exercises-filter-list"></ul>
       </div>
@@ -20,7 +23,10 @@
       <div class="exercises-categories"></div>
       <template
         file="/templates/exercises/blockquote.html"
-        recomendation-icon="./assets/icons.svg#dumbbells" />
+        block-place="home-quote"
+        page-img="./assets/images/quote/home-ill"
+        is-text-hidden=""
+      />
     </div>
   </div>
 </section>
