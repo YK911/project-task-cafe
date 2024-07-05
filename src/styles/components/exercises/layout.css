@@ -199,23 +199,28 @@
 }
 
 .exercises-list-container {
+  @media only screen and (max-width: 767px) {
+    max-width: 335px;
+  }
+
   @media only screen and (min-width: 1280px) {
-    flex-grow: 1;
+    max-width: 740px;
+  }
+  @media only screen and (min-width: 1440px) {
+    max-width: 900px;
+    width: 100%;
   }
 
   .exercises-cards {
     display: grid;
     row-gap: 20px;
+    grid-template-columns: minmax(280px, 335px);
 
     @media only screen and (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, calc(50% - 8px));
       row-gap: 32px;
       column-gap: 16px;
     }
-  }
-
-  .excercise-card-item {
-    width: 100%;
   }
 }
 
