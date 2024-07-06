@@ -1,5 +1,5 @@
 import capitalize from './capitalize';
-import { saveExerciseId } from './exercises-shared';
+import { saveExerciseId, removeExerciseId } from './exercises-shared';
 
 const exerciseRefs = {
   dialog: document.querySelector('[data-modal="exercise"]'),
@@ -11,15 +11,40 @@ const exerciseRefs = {
 
 const showModal = () => exerciseRefs.dialog.showModal();
 const closeModal = () => exerciseRefs.dialog.close();
+const checkFavExercise = (favId) => {
+  const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  return exercises.includes(favId);
+};
+const toggleFavouritesOnBtnClick = (exerciseId, selector, isInFavorites) => {
+  const target = selector;
+  if (isInFavorites) {
+    removeExerciseId(exerciseId);
+    target.firstElementChild.textContent = 'Add to favorites';
+    target.classList.remove('is-favourite');
+    return;
+  }
+
+  saveExerciseId(exerciseId);
+  target.firstElementChild.textContent = 'Remove from favorites';
+  target.classList.add('is-favourite');
+};
+const toggleFavouritesOnModalOpen = (exerciseId, selector, isInFavorites) => {
+  const target = selector;
+  if (isInFavorites) {
+    target.firstElementChild.textContent = 'Add to favorites';
+    target.classList.remove('is-favourite');
+    return;
+  }
+  target.firstElementChild.textContent = 'Remove from favorites';
+  target.classList.add('is-favourite');
+};
 
 const onFavouritesBtnClick = (event) => {
   const target = event.currentTarget;
   const exerciseId = target.dataset.addFavourites;
-
-  saveExerciseId(exerciseId);
-  target.classList.toggle('is-favourite');
-
-  console.log(`Click on favourites btn ${exerciseId}`);
+  const isInFavorites = checkFavExercise(exerciseId);
+  toggleFavouritesOnBtnClick(exerciseId, target, isInFavorites);
 };
 const onRatingBtnClick = () => {
   console.log('Click on rating btn');
@@ -98,9 +123,12 @@ export default async function onExerciseClick(exerciseId) {
   const favouritesBtn = exerciseRefs.dialog.querySelector(
     '.modal-btn[data-add-favourites]',
   );
+  const isInFavourites = checkFavExercise(exerciseId);
+
   favouritesBtn.dataset.addFavourites = exerciseId;
   detailsBlock.innerHTML = detailsMarkup;
 
+  toggleFavouritesOnModalOpen(exerciseId, favouritesBtn, !isInFavourites);
   showModal(exerciseId);
 }
 

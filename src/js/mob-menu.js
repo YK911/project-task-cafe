@@ -4,7 +4,7 @@ const closeMenuBtn = document.querySelector('.js-close-menu');
 const mobMenuLink = document.querySelector('.js-menu-link');
 
 function toggleMenu() {
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.toggle('is-open');
 }
 
 function onMenuClick(evt) {

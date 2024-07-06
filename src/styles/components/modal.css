@@ -14,6 +14,8 @@
   }
 }
 .modal::backdrop {
+  min-width: 100dvw;
+  min-height: 100dvh;
   background: rgb(var(--cl-dark) / 40%);
 }
 .modal-close-btn {
@@ -34,6 +36,10 @@
     display: flex;
     gap: 32px;
     margin-bottom: 64px;
+  }
+
+  .modal.favorites & {
+    margin: 0;
   }
 }
 .modal-ill {
@@ -103,7 +109,6 @@
   font-weight: 500;
 }
 .modal-desc {
-  margin-bottom: 40px;
   color: rgb(var(--cl-primary-light) / 60%);
 }
 .modal-controls {
@@ -112,6 +117,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  .modal.favorites & {
+    display: none;
+  }
 }
 .modal-btn {
   /* flex-grow: 1; */
