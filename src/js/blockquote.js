@@ -16,8 +16,12 @@ async function getBlockQuoteData() {
   const currentDate = getCurrentDate();
   const storedValue = localStorage.getItem(BLOCKQUOTE_KEY);
 
-  if (storedValue && isSameDate(currentDate, storedValue.date)) {
-    return JSON.parse(storedValue).data;
+  if (storedValue) {
+    const parsedStoredValue = JSON.parse(storedValue);
+
+    if (isSameDate(currentDate, parsedStoredValue.date)) {
+      return parsedStoredValue.data;
+    }
   }
 
   const result = await axios.get('https://your-energy.b.goit.study/api/quote');
