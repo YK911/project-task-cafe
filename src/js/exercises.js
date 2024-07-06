@@ -17,7 +17,7 @@ function drawFilter() {
     item.classList.add('exercises-filter-item');
 
     if (filter.value === state.selectedFilter.value) {
-      item.classList.add('exercises-filter-item-active');
+      item.classList.add('current');
     }
 
     const button = document.createElement('button');
@@ -32,10 +32,10 @@ function drawFilter() {
         '.exercises-filter-item',
       );
       filterItems.forEach((filterItem) => {
-        filterItem.classList.remove('exercises-filter-item-active');
+        filterItem.classList.remove('current');
       });
 
-      item.classList.add('exercises-filter-item-active');
+      item.classList.add('current');
       state.selectFilter(filter);
       updateCategoryName();
       updateSearchVisibility();

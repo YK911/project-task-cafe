@@ -27,8 +27,6 @@ async function getBlockQuoteData() {
   const result = await axios.get('https://your-energy.b.goit.study/api/quote');
   const { data } = result;
 
-  console.log('dagetBlockQuoteDatata: ', data);
-
   if (data) {
     localStorage.setItem(
       BLOCKQUOTE_KEY,

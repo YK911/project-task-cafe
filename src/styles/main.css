@@ -20,15 +20,15 @@
 /* #region Components */
 @import url('./components/header.css');
 @import url('./components/navigation.css');
+@import url('./components/hero.css');
 @import url('./components/exercises/layout.css');
 @import url('./components/exercises/category.css');
 @import url('./components/exercises/exercise.css');
 @import url('./components/exercises/blockquote.css');
+@import url('./components/pagination.css');
 @import url('./components/footer.css');
-@import url('./components/hero.css');
 @import url('./components/modal.css');
 @import url('./components/rating-form.css');
-@import url('./components/pagination.css');
 @import url('./components/loader.css');
 @import url('./components/favorites.css');
 /* #endregion */

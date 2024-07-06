@@ -17,8 +17,8 @@ h2 {
 }
 
 #exerciseListEmpty {
-  width: 554px;
-  margin: auto;
+  max-width: 554px;
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -53,7 +53,7 @@ h2 {
 
 .exercises-list-container.favorites {
   overflow: scroll;
-  height: 517px;
+  /* height: 517px; */
 }
 
 .exercises-list-container.favorites

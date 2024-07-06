@@ -44,9 +44,9 @@ function updateSearchVisibility() {
   }
 
   if (state.selectedCategory) {
-    container.classList.remove('visually-hidden');
+    container.classList.remove('hide');
   } else {
-    container.classList.add('visually-hidden');
+    container.classList.add('hide');
   }
 
   clearSearchInput();

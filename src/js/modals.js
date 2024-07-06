@@ -17,6 +17,7 @@ const onFavouritesBtnClick = (event) => {
   const exerciseId = target.dataset.addFavourites;
 
   saveExerciseId(exerciseId);
+  target.classList.toggle('is-favourite');
 
   console.log(`Click on favourites btn ${exerciseId}`);
 };
@@ -56,7 +57,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     <div class="modal-details">
     <h2 class="modal-caption">${capitalize(name)}</h2>
     <div class="modal-rating">
-      <p>${rating}</p>
+      <p>${rating.toFixed(1)}</p>
       <svg width="98" height="13" id="rating-stars">
         <use style="--shift: -2" href="./assets/icons.svg#star"></use>
         <use style="--shift: -1" href="./assets/icons.svg#star"></use>

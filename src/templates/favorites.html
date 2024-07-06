@@ -1,23 +1,22 @@
 <section class="favorites">
   <div class="container">
-    <h2>{=$text}</h2>
+    <h2>Favorites</h2>
 
     <div class="exercises-container">
-      <div class="exercises-list-container favorites">
-        <ul class="exercises-cards" id="exerciseList"></ul>
-        <p id="exerciseListEmpty" class="visually-hidden">
-          It appears that you haven't added any exercises to your favorites yet.
-          To get started, you can add exercises that you like to your favorites
-          for easier access in the future.
-        </p>
-      </div>
-
       <template
         file="/templates/exercises/blockquote.html"
         block-place="favorites-quote"
         page-img="./assets/images/quote/fav-ill"
         is-text-hidden="visually-hidden"
       />
+      <div class="exercises-list-container favorites">
+        <ul class="exercises-cards" id="exerciseList"></ul>
+        <p class="visually-hidden" id="exerciseListEmpty">
+          It appears that you haven't added any exercises to your favorites yet.
+          To get started, you can add exercises that you like to your favorites
+          for easier access in the future.
+        </p>
+      </div>
     </div>
   </div>
 </section>
