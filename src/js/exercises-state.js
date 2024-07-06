@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { showLoader, hideLoader } from './loader';
 
 export default {
   filters: [
@@ -36,10 +35,8 @@ export default {
     this.page = 1;
   },
   async getRequestResults(apiUrl, options) {
-    showLoader();
     const { data } = await axios.get(apiUrl, options);
     this.totalPages = data.totalPages;
-    hideLoader();
     return data.results;
   },
   async getCategories() {

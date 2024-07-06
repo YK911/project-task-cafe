@@ -1,4 +1,5 @@
 import state from './exercises-state';
+import { showLoader, hideLoader } from './loader';
 import { drawCategoriesList, updateCategoryName } from './exercises-categories';
 import {
   attachSearchListener,
@@ -54,8 +55,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
+  showLoader();
+
   state.selectFilter(state.filters[0]);
   drawFilter();
+
   attachSearchListener();
+
   await drawCategoriesList();
+
+  hideLoader();
 });

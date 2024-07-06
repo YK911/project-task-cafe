@@ -72,7 +72,12 @@ async function drawCategoriesList(page = 1) {
 
   container.appendChild(categoriesList);
 
-  updatePagination((p) => drawCategoriesList(p));
+  updatePagination((p) => {
+    drawCategoriesList(p);
+    document
+      .getElementById('exercises-filters')
+      ?.scrollIntoView({ behavior: 'smooth' });
+  });
 }
 
 export { drawCategoriesList, getExerciseCategoryNode, updateCategoryName };
