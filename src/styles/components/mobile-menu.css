@@ -1,19 +1,20 @@
 /* mobile backdrop */
 .backdrop {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 1;
+  inset: 0;
   z-index: 999;
   background-color: rgb(var(--cl-primary-dark) / 40%);
-  transition: opacity var(--tran-duration);
+  transition: var(--tran-duration);
+  transition-property: opacity, visibility;
 
-  &.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
   }
 }
 .menu-container {
@@ -39,11 +40,11 @@
 }
 
 body:has(dialog),
-body:has(.backdrop.is-hidden) {
+body:has(.backdrop) {
   overflow-y: scroll;
 }
 body:has(dialog[open]),
-body:has(.backdrop) {
+body:has(.backdrop.is-open) {
   overflow-y: hidden;
 }
 
