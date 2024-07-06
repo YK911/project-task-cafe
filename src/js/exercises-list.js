@@ -92,5 +92,10 @@ export default async function drawExercisesList(page = 1) {
 
   container.appendChild(list);
 
-  updatePagination((p) => drawExercisesList(p));
+  updatePagination((p) => {
+    drawExercisesList(p);
+    document
+      .getElementById('exercises-filters')
+      ?.scrollIntoView({ behavior: 'smooth' });
+  });
 }
