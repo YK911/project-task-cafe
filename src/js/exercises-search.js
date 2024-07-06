@@ -18,8 +18,14 @@ function attachSearchListener() {
     }
 
     state.setKeyword(e.target.value);
-    drawExercisesList();
   });
+
+  document
+    .querySelector('#exercises-filters-form')
+    .addEventListener('submit', (e) => {
+      e.preventDefault();
+      drawExercisesList();
+    });
 
   searchIcon?.addEventListener('click', () => {
     if (!state.keyword) {
