@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YOUR ENERGY | Home page</title>
     <script type="module" crossorigin src="/project-task-cafe/assets/vendor-CtRQQMrb.js"></script>
-    <script type="module" crossorigin src="/project-task-cafe/assets/main-M45qXxV3.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-OcX9hFPb.css">
+    <script type="module" crossorigin src="/project-task-cafe/assets/main-C20QTA-L.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-GzeXoCM_.css">
     <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-pbv_zplY.css">
   </head>
   <body class="homepage">
@@ -35,6 +35,7 @@
       href="https://www.facebook.com/goITclub/"
       aria-label="Go to our facebook page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#facebook"></use>
@@ -47,6 +48,7 @@
       href="https://www.instagram.com/goitclub/"
       aria-label="Go to our instagram page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#instagram"></use>
@@ -59,6 +61,7 @@
       href="https://www.youtube.com/c/GoIT"
       aria-label="Go to our youtube page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#youtube"></use>
@@ -164,7 +167,7 @@
         ></span>
       </h2>
       <div class="exercises-filters">
-        <div class="exercises-search-container visually-hidden">
+        <div class="exercises-search-container hide">
           <input
             type="text"
             name="exercises-search"
@@ -276,6 +279,7 @@
       href="https://www.facebook.com/goITclub/"
       aria-label="Go to our facebook page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#facebook"></use>
@@ -288,6 +292,7 @@
       href="https://www.instagram.com/goitclub/"
       aria-label="Go to our instagram page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#instagram"></use>
@@ -300,6 +305,7 @@
       href="https://www.youtube.com/c/GoIT"
       aria-label="Go to our youtube page"
       target="_blank"
+      rel="noopener norefferer"
     >
       <svg class="socials-icon" width="28" height="28">
         <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#youtube"></use>
@@ -354,6 +360,78 @@
   </div>
 </footer>
 
+
+    <div class="loader-overlay">
+  <div class="loader"></div>
+</div>
+
+    <div class="backdrop is-hidden js-menu-backdrop">
+  <div class="menu-container js-menu-container" id="mob-menu">
+    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
+      <svg class="menu-toggle-icon" width="32" height="32">
+        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#x-mark"></use>
+      </svg>
+    </button>
+
+    <ul class="menu-nav js-menu-link">
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./index.html">Home</a>
+      </li>
+      <li class="menu-item on-hover">
+        <a class="menu-link" href="./favorites.html">Favorites</a>
+      </li>
+    </ul>
+
+    <ul class="socials menu-socials">
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.facebook.com/goITclub/"
+      aria-label="Go to our facebook page"
+      target="_blank"
+      rel="noopener norefferer"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#facebook"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.instagram.com/goitclub/"
+      aria-label="Go to our instagram page"
+      target="_blank"
+      rel="noopener norefferer"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#instagram"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="socials-item">
+    <a
+      class="socials-link"
+      href="https://www.youtube.com/c/GoIT"
+      aria-label="Go to our youtube page"
+      target="_blank"
+      rel="noopener norefferer"
+    >
+      <svg class="socials-icon" width="28" height="28">
+        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#youtube"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+    <a href="#" class="scroll-btn" id="scrollBtn" aria-label="Scroll Up">
+  <svg width="14" height="14" class="scroll-icon">
+    <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#arrow"></use>
+  </svg>
+</a>
 
     <dialog class="modal" data-modal="exercise">
   <button class="modal-close-btn" type="button" data-modal-close>
@@ -429,13 +507,14 @@
     <button class="modal-btn filled" type="button" data-add-favourites>
       <span>Add to favorites</span>
       <svg class="modal-btn-icon" width="18" height="18">
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#heart"></use>
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#trash"></use>
+        <use class="heart" href="/project-task-cafe/assets/icons-D1p9gWoy.svg#heart"></use>
+        <use class="trash" href="/project-task-cafe/assets/icons-D1p9gWoy.svg#trash"></use>
       </svg>
     </button>
-    <button class="modal-btn" type="button" data-rating-open>
+    <!-- Disable rating btn -->
+    <!-- <button class="modal-btn" type="button" data-rating-open>
       Give a rating
-    </button>
+    </button> -->
   </div>
 </dialog>
 
@@ -491,75 +570,6 @@
   </form>
 </dialog>
 
-
-    <div class="backdrop is-hidden js-menu-backdrop">
-  <div class="menu-container js-menu-container" id="mob-menu">
-    <button class="menu-toggle on-hover js-close-menu" aria-label="Close menu">
-      <svg class="menu-toggle-icon" width="32" height="32">
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#x-mark"></use>
-      </svg>
-    </button>
-
-    <ul class="menu-nav js-menu-link">
-      <li class="menu-item on-hover">
-        <a class="menu-link" href="./index.html">Home</a>
-      </li>
-      <li class="menu-item on-hover">
-        <a class="menu-link" href="./favorites.html">Favorites</a>
-      </li>
-    </ul>
-
-    <ul class="socials menu-socials">
-  <li class="socials-item">
-    <a
-      class="socials-link"
-      href="https://www.facebook.com/goITclub/"
-      aria-label="Go to our facebook page"
-      target="_blank"
-    >
-      <svg class="socials-icon" width="28" height="28">
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#facebook"></use>
-      </svg>
-    </a>
-  </li>
-  <li class="socials-item">
-    <a
-      class="socials-link"
-      href="https://www.instagram.com/goitclub/"
-      aria-label="Go to our instagram page"
-      target="_blank"
-    >
-      <svg class="socials-icon" width="28" height="28">
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#instagram"></use>
-      </svg>
-    </a>
-  </li>
-  <li class="socials-item">
-    <a
-      class="socials-link"
-      href="https://www.youtube.com/c/GoIT"
-      aria-label="Go to our youtube page"
-      target="_blank"
-    >
-      <svg class="socials-icon" width="28" height="28">
-        <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#youtube"></use>
-      </svg>
-    </a>
-  </li>
-</ul>
-
-  </div>
-</div>
-
-    <a href="#" class="scroll-btn" id="scrollBtn" aria-label="Scroll Up">
-  <svg width="14" height="14" class="scroll-icon">
-    <use href="/project-task-cafe/assets/icons-D1p9gWoy.svg#arrow"></use>
-  </svg>
-</a>
-
-    <div class="loader-overlay">
-  <div class="loader"></div>
-</div>
 
     <template class="js-exercise-category" id="exercise-category-template">
   <div class="exercise-category">
