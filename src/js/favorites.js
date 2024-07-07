@@ -62,6 +62,53 @@ function displayExerciseIds() {
             displayExerciseIds();
           });
         });
+      })
+      .then(() => {
+        // Pagination functionality
+        const items = document.querySelectorAll('.card');
+        let itemsPerPage = 10;
+        let currentPage = 1;
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        if (window.innerWidth < 768) {
+          itemsPerPage = 8;
+        }
+
+        function showPage(page) {
+          // Calculate start and end index for items to show
+          const start = (page - 1) * itemsPerPage;
+          const end = start + itemsPerPage;
+
+          // Hide all items
+          items.forEach((item, index) => {
+            item.classList.remove('visible');
+            if (index >= start && index < end) {
+              item.classList.add('visible');
+            }
+          });
+
+          // Enable/disable pagination buttons
+          document.getElementById('prev').disabled = page === 1;
+          document.getElementById('next').disabled = page === totalPages;
+        }
+
+        // Event listeners for pagination buttons
+        document.getElementById('prev').addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage -= 1;
+            showPage(currentPage);
+          }
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage += 1;
+            showPage(currentPage);
+          }
+        });
+
+        // Initialize the first page
+        showPage(currentPage);
       });
   }
 }
