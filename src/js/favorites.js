@@ -68,10 +68,30 @@ function displayExerciseIds() {
         const items = document.querySelectorAll('.card');
         let itemsPerPage = 10;
         let currentPage = 1;
-        const totalPages = Math.ceil(items.length / itemsPerPage);
 
         if (window.innerWidth < 768) {
           itemsPerPage = 8;
+        }
+
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        if (totalPages === 1) {
+          console.log(totalPages);
+          document
+            .querySelector('.pagination-favorites')
+            .classList.remove('display-flex');
+          document
+            .querySelector('.pagination-favorites')
+            .classList.remove('display-none');
+          document.querySelector('.pagination-favorites').style.display =
+            'none';
+        } else {
+          document
+            .querySelector('.pagination-favorites')
+            .classList.remove('display-none');
+          document
+            .querySelector('.pagination-favorites')
+            .classList.add('display-flex');
         }
 
         function showPage(page) {

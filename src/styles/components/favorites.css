@@ -33,6 +33,10 @@ h2 {
   display: none;
 }
 
+.display-flex {
+  display: flex;
+}
+
 .quote-ill.favorites {
   width: 239px;
   height: 141px;
@@ -62,7 +66,7 @@ h2 {
   height: 20px;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
   .exercises-list-container.favorites {
     position: relative;
     overflow-y: scroll;
@@ -101,14 +105,20 @@ h2 {
   }
 }
 
-.exercises-container.favorites > .pagination {
-  display: none;
+@media only screen and (min-width: 1280px) {
+  .pagination-favorites {
+    display: none;
+  }
 }
 
-@media only screen and (max-width: 1439px) {
-  .exercises-container.favorites > .pagination {
+@media only screen and (max-width: 1279px) {
+  .pagination-favorites {
     display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
   }
+
   .exercises-list-container.favorites > .exercises-cards > .card {
     display: none; /* Hide all items initially */
   }
