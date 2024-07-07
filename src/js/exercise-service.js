@@ -62,7 +62,6 @@ function buildExcerciseCardDetails(exercise) {
 }
 
 function buildExerciseCard(exercise) {
-  // console.log(exercise);
   const templateName = '#excercise-card-template';
 
   const card = document.querySelector(templateName).content.cloneNode(true);

@@ -33,7 +33,6 @@ const toggleFavouritesOnBtnClick = (exerciseId, selector, isInFavorites) => {
 
   // saveExerciseId(exerciseId);
   saveExerciseDetails(exerciseDetails);
-  // console.log(exerciseDetails);
   target.firstElementChild.textContent = 'Remove from favorites';
   target.classList.add('is-favourite');
 };

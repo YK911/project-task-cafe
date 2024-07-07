@@ -6,12 +6,9 @@ import { FAVORITES_KEY } from './config';
 
 // Function to save exercise details to local storage
 function saveExerciseDetails(exercise) {
-  console.log(exercise);
-
   // Extract the _id key from the object
   // eslint-disable-next-line no-underscore-dangle
   const objectId = exercise._id;
-  console.log(objectId);
 
   // Get the existing array of objects from local storage
   const arrayOfFavorites =
@@ -22,7 +19,6 @@ function saveExerciseDetails(exercise) {
 
   // Convert the array back to JSON
   const jsonArray = JSON.stringify(arrayOfFavorites);
-  console.log(jsonArray);
 
   // Save the updated array to local storage
   localStorage.setItem(FAVORITES_KEY, jsonArray);
