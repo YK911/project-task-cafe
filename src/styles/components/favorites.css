@@ -60,6 +60,7 @@ h2 {
 
 @media only screen and (min-width: 1440px) {
   .exercises-list-container.favorites {
+    position: relative;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 520px;
