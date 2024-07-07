@@ -3,7 +3,7 @@
   src:
     url('../../assets/fonts/DMSans.woff2') format('woff2'),
     url('../../assets/fonts/DMSans.ttf') format('truetype');
-  font-optical-sizing: auto;
+  font-optical-sizing: none;
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -13,7 +13,7 @@
   src:
     url('../../assets/fonts/DMSans-Italic.woff2') format('woff2'),
     url('../../assets/fonts/DMSans-Italic.ttf') format('truetype');
-  font-optical-sizing: auto;
+  font-optical-sizing: none;
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;

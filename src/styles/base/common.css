@@ -6,6 +6,7 @@ body {
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
+  font-optical-sizing: none;
 
   @media only screen and (min-width: 768px) {
     font-size: 18px;
