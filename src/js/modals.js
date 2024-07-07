@@ -1,3 +1,4 @@
+import CustomStarRating from './customStarRating';
 import capitalize from './capitalize';
 import {
   saveExerciseDetails,
@@ -5,6 +6,7 @@ import {
 } from './exercises-shared';
 
 import { FAVORITES_KEY } from './config';
+import 'star-rating.js/dist/star-rating.min.css';
 
 let exerciseDetails = {};
 const exerciseRefs = {
@@ -90,13 +92,14 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     <h2 class="modal-caption">${capitalize(name)}</h2>
     <div class="modal-rating">
       <p>${rating.toFixed(1)}</p>
-      <svg width="98" height="13" id="rating-stars">
-        <use style="--shift: -2" href="./assets/icons.svg#star-1"></use>
-        <use style="--shift: -1" href="./assets/icons.svg#star-1"></use>
-        <use style="--shift: 0" href="./assets/icons.svg#star-1"></use>
-        <use style="--shift: 1" href="./assets/icons.svg#star-1"></use>
-        <use style="--shift: 2" href="./assets/icons.svg#star-1"></use>
-      </svg>
+      <select class="star-rating">
+          <option value="">Select a rating</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+      </select>
     </div>
     <ul class="modal-meta">
       <li>
@@ -137,6 +140,19 @@ export default async function onExerciseClick(exerciseId) {
 
   toggleFavouritesOnModalOpen(exerciseId, favouritesBtn, !isInFavourites);
   showModal(exerciseId);
+
+  const ratingOptions = {
+    starSize: 18,
+    maxStars: 5,
+    initialRating: 4,
+    tooltip: false,
+    stars: (el) => {
+      const star = el;
+      star.innerHTML =
+        '<svg width="20" height="19" xmlns="http://www.w3.org/2000/svg"><path class="gl-star-full" d="M9.049.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118L1.077 8.101c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69L9.05.927Z"/></svg>';
+    },
+  };
+  new CustomStarRating('.star-rating', ratingOptions);
 }
 
 if (exerciseRefs.closeBtn) {
