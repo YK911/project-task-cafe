@@ -100,3 +100,20 @@ h2 {
     gap: 8px;
   }
 }
+
+.pagination {
+  display: none;
+}
+
+@media only screen and (max-width: 1439px) {
+  .pagination {
+    display: block;
+  }
+  .card {
+    display: none; /* Hide all items initially */
+  }
+
+  .card.visible {
+    display: block; /* Show only the visible items */
+  }
+}
