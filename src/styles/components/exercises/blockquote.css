@@ -89,6 +89,7 @@
   }
   .quote-reccomendation-title {
     margin-bottom: 0;
+
     span {
       margin-bottom: 6px;
     }
@@ -178,6 +179,10 @@
   border-radius: var(--radius-md);
   max-height: 242px;
 
+  @media only screen and (min-width: 768px) {
+    max-height: 249px;
+  }
+
   img {
     object-position: center;
     aspect-ratio: 1 / 1;
@@ -213,6 +218,11 @@
     color: rgb(var(--cl-primary-dark));
     font-weight: 500;
     line-height: 1;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 1.33;
+    }
   }
 }
 .quote-reccomendation-desc {
