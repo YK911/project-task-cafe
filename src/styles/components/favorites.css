@@ -17,9 +17,16 @@ h2 {
 }
 
 #exerciseListEmpty {
+  margin-top: -60px;
   max-width: 554px;
   margin-inline: auto;
   text-align: center;
+  @media only screen and (min-width: 768px) {
+    margin-top: 68px;
+  }
+  @media only screen and (min-width: 1440px) {
+    margin-top: 114px;
+  }
 }
 
 .quote-ill.favorites {
@@ -51,9 +58,14 @@ h2 {
   height: 20px;
 }
 
-.exercises-list-container.favorites {
-  overflow: scroll;
-  /* height: 517px; */
+@media only screen and (min-width: 1440px) {
+  .exercises-list-container.favorites {
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 520px;
+    padding-right: 16px;
+  }
 }
 
 .exercises-list-container.favorites

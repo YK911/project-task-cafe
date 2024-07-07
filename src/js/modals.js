@@ -1,6 +1,12 @@
 import capitalize from './capitalize';
-import { saveExerciseId, removeExerciseId } from './exercises-shared';
+import {
+  saveExerciseDetails,
+  deleteExerciseDetailsById,
+} from './exercises-shared';
 
+import { FAVORITES_KEY } from './config';
+
+let exerciseDetails = {};
 const exerciseRefs = {
   dialog: document.querySelector('[data-modal="exercise"]'),
   closeBtn: document.querySelector('[data-modal-close]'),
@@ -12,20 +18,21 @@ const exerciseRefs = {
 const showModal = () => exerciseRefs.dialog.showModal();
 const closeModal = () => exerciseRefs.dialog.close();
 const checkFavExercise = (favId) => {
-  const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
-
+  const exercisesParsed = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+  const exercises = Object.keys(exercisesParsed);
   return exercises.includes(favId);
 };
 const toggleFavouritesOnBtnClick = (exerciseId, selector, isInFavorites) => {
   const target = selector;
   if (isInFavorites) {
-    removeExerciseId(exerciseId);
+    deleteExerciseDetailsById(exerciseId);
     target.firstElementChild.textContent = 'Add to favorites';
     target.classList.remove('is-favourite');
     return;
   }
 
-  saveExerciseId(exerciseId);
+  // saveExerciseId(exerciseId);
+  saveExerciseDetails(exerciseDetails);
   target.firstElementChild.textContent = 'Remove from favorites';
   target.classList.add('is-favourite');
 };
@@ -117,7 +124,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
 };
 
 export default async function onExerciseClick(exerciseId) {
-  const exerciseDetails = await getExerciseDetails(exerciseId);
+  exerciseDetails = await getExerciseDetails(exerciseId);
   const detailsMarkup = createExerciseDetailsMarkup(exerciseDetails);
   const detailsBlock = exerciseRefs.dialog.querySelector('.modal-body');
   const favouritesBtn = exerciseRefs.dialog.querySelector(

@@ -1,12 +1,39 @@
 import axios from 'axios';
 import onExerciseClick from './modals';
 
+import { FAVORITES_KEY } from './config';
+
 async function getExerciseById(id) {
   const response = await axios.get(
     `https://your-energy.b.goit.study/api/exercises/${id}`,
   );
 
   return response.data;
+}
+
+async function getExerciseDetailsById(key) {
+  // Retrieve the stored data from local storage
+  const storedData = localStorage.getItem(FAVORITES_KEY);
+
+  // Check if storedData exists
+  if (!storedData) {
+    console.log('No data found in local storage');
+    return null;
+  }
+
+  // Parse the stored data to get the objects
+  const parsedData = JSON.parse(storedData);
+
+  // Retrieve the object by the specified key
+  const retrievedObject = parsedData[key];
+
+  // Check if the object exists for the given key
+  if (!retrievedObject) {
+    console.log(`No object found for key: ${key}`);
+    return null;
+  }
+
+  return retrievedObject;
 }
 
 function buildExcerciseCardDetails(exercise) {
@@ -35,7 +62,6 @@ function buildExcerciseCardDetails(exercise) {
 }
 
 function buildExerciseCard(exercise) {
-  // console.log(exercise);
   const templateName = '#excercise-card-template';
 
   const card = document.querySelector(templateName).content.cloneNode(true);
@@ -71,4 +97,9 @@ function buildExerciseCard(exercise) {
   return card;
 }
 
-export { getExerciseById, buildExerciseCard, buildExcerciseCardDetails };
+export {
+  getExerciseById,
+  getExerciseDetailsById,
+  buildExerciseCard,
+  buildExcerciseCardDetails,
+};
