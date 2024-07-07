@@ -72,6 +72,11 @@
   color: rgb(var(--cl-primary-light));
 }
 .modal-rating {
+  --gl-star-color: rgb(var(--fill-star));
+  --gl-star-color-inactive: #f4f4f433;
+  --gl-star-size: 18px;
+  --gl-star-inner-size: 14px;
+
   display: flex;
   align-items: center;
   gap: 2px;
@@ -81,9 +86,17 @@
   line-height: 1.5;
   color: rgb(var(--cl-primary-light));
 
-  use {
-    transform: translateX(calc(var(--shift) * 20px));
-    fill: rgb(var(--fill-star));
+  [data-star-rating] {
+    pointer-events: none;
+
+    .gl-star-rating--stars > span {
+      align-items: center;
+      justify-content: center;
+    }
+    svg {
+      width: var(--gl-star-inner-size);
+      height: var(--gl-star-inner-size);
+    }
   }
 }
 .modal-meta {
@@ -137,6 +150,9 @@
 
   @media only screen and (max-width: 767px) {
     margin-right: auto;
+  }
+  @media only screen and (min-width: 768px) {
+    max-width: 338px;
   }
 
   &.filled {

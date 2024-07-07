@@ -1,4 +1,5 @@
-import CustomStarRating from './customStarRating';
+// eslint-disable-next-line
+import StarRating from 'star-rating.js';
 import capitalize from './capitalize';
 import {
   saveExerciseDetails,
@@ -6,6 +7,7 @@ import {
 } from './exercises-shared';
 
 import { FAVORITES_KEY } from './config';
+// eslint-disable-next-line
 import 'star-rating.js/dist/star-rating.min.css';
 
 let exerciseDetails = {};
@@ -78,6 +80,11 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     time,
     popularity,
   } = detailsInfo;
+  const starsOptions = Array.from(
+    { length: 5 },
+    (_, i) =>
+      `<option value="${i + 1}" ${i + 1 === Math.round(rating) ? 'selected' : ''}>${i + 1} Stars</option>`,
+  ).join('');
 
   return `<div class="modal-ill">
       <img
@@ -94,11 +101,7 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
       <p>${rating.toFixed(1)}</p>
       <select class="star-rating">
           <option value="">Select a rating</option>
-          <option value="5">5 Stars</option>
-          <option value="4">4 Stars</option>
-          <option value="3">3 Stars</option>
-          <option value="2">2 Stars</option>
-          <option value="1">1 Star</option>
+          ${starsOptions}
       </select>
     </div>
     <ul class="modal-meta">
@@ -149,10 +152,11 @@ export default async function onExerciseClick(exerciseId) {
     stars: (el) => {
       const star = el;
       star.innerHTML =
-        '<svg width="20" height="19" xmlns="http://www.w3.org/2000/svg"><path class="gl-star-full" d="M9.049.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118L1.077 8.101c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69L9.05.927Z"/></svg>';
+        '<svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path class="gl-star-full" d="M9.049.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118L1.077 8.101c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69L9.05.927Z"/></svg>';
     },
   };
-  new CustomStarRating('.star-rating', ratingOptions);
+  // eslint-disable-next-line
+  new StarRating('.star-rating', ratingOptions);
 }
 
 if (exerciseRefs.closeBtn) {
