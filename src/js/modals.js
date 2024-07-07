@@ -91,11 +91,11 @@ const createExerciseDetailsMarkup = (detailsInfo) => {
     <div class="modal-rating">
       <p>${rating.toFixed(1)}</p>
       <svg width="98" height="13" id="rating-stars">
-        <use style="--shift: -2" href="./assets/icons.svg#star"></use>
-        <use style="--shift: -1" href="./assets/icons.svg#star"></use>
-        <use style="--shift: 0" href="./assets/icons.svg#star"></use>
-        <use style="--shift: 1" href="./assets/icons.svg#star"></use>
-        <use style="--shift: 2" href="./assets/icons.svg#star"></use>
+        <use style="--shift: -2" href="./assets/icons.svg#star-1"></use>
+        <use style="--shift: -1" href="./assets/icons.svg#star-1"></use>
+        <use style="--shift: 0" href="./assets/icons.svg#star-1"></use>
+        <use style="--shift: 1" href="./assets/icons.svg#star-1"></use>
+        <use style="--shift: 2" href="./assets/icons.svg#star-1"></use>
       </svg>
     </div>
     <ul class="modal-meta">
