@@ -31,11 +31,11 @@
   padding: 20px;
   padding-top: 280px;
   background-color: rgb(var(--cl-primary-dark));
-  transform: translateX(0);
+  transform: translateX(100%);
   transition: transform var(--tran-duration);
 
-  .backdrop.is-hidden & {
-    transform: translateX(100%);
+  .backdrop.is-open & {
+    transform: translateX(0);
   }
 }
 
