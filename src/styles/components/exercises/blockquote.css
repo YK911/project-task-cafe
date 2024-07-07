@@ -122,6 +122,7 @@
   }
 }
 .quote-block {
+  position: relative;
   display: flex;
   gap: 18px;
   padding: 20px;
@@ -165,13 +166,15 @@
 }
 .quote-commas {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
   fill: rgb(var(--cl-primary-light));
 
   @media only screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
+    top: 40px;
+    right: 40px;
   }
 }
 .quote-ill {
