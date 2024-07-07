@@ -101,19 +101,19 @@ h2 {
   }
 }
 
-.pagination {
+.exercises-container.favorites > .pagination {
   display: none;
 }
 
 @media only screen and (max-width: 1439px) {
-  .pagination {
-    display: block;
+  .exercises-container.favorites > .pagination {
+    display: flex;
   }
-  .card {
+  .exercises-list-container.favorites > .exercises-cards > .card {
     display: none; /* Hide all items initially */
   }
 
-  .card.visible {
+  .exercises-list-container.favorites > .exercises-cards > .card.visible {
     display: block; /* Show only the visible items */
   }
 }
