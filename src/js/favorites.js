@@ -16,7 +16,7 @@ function displayExerciseIds() {
   const exercises = Object.keys(exercisesParsed);
   const fragment = document.createDocumentFragment();
   if (exercises.length === 0 && exerciseListEmpty) {
-    exerciseListEmpty.classList.remove('visually-hidden');
+    exerciseListEmpty.classList.remove('display-none');
   } else if (exerciseList) {
     showLoader();
     // Map each exercise ID to a promise that fetches its data

@@ -17,7 +17,7 @@ h2 {
 }
 
 #exerciseListEmpty {
-  margin-top: -60px;
+  margin-top: -20px;
   max-width: 554px;
   margin-inline: auto;
   text-align: center;
@@ -27,6 +27,10 @@ h2 {
   @media only screen and (min-width: 1440px) {
     margin-top: 114px;
   }
+}
+
+.display-none {
+  display: none;
 }
 
 .quote-ill.favorites {
@@ -65,6 +69,16 @@ h2 {
     overflow-x: hidden;
     height: 520px;
     padding-right: 16px;
+  }
+}
+
+.exercises-container.favorites {
+  gap: 40px;
+  @media only screen and (min-width: 768px) {
+    gap: 64px;
+  }
+  @media only screen and (min-width: 1440px) {
+    gap: 32px;
   }
 }
 
