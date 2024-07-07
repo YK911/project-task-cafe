@@ -51,9 +51,13 @@ h2 {
   height: 20px;
 }
 
-.exercises-list-container.favorites {
-  overflow: scroll;
-  /* height: 517px; */
+@media only screen and (min-width: 1440px) {
+  .exercises-list-container.favorites {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 520px;
+    padding-right: 16px;
+  }
 }
 
 .exercises-list-container.favorites

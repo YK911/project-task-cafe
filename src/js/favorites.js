@@ -1,6 +1,7 @@
-import { getExerciseById, buildExerciseCard } from './exercise-service';
+import { getExerciseDetailsById, buildExerciseCard } from './exercise-service';
 import { showLoader, hideLoader } from './loader';
-import { removeExerciseId } from './exercises-shared';
+import { deleteExerciseDetailsById } from './exercises-shared';
+import { FAVORITES_KEY } from './config';
 
 // Function to display exercise IDs from local storage
 function displayExerciseIds() {
@@ -11,7 +12,8 @@ function displayExerciseIds() {
     exerciseList.innerHTML = '';
   }
 
-  const exercises = JSON.parse(localStorage.getItem('favorites')) || [];
+  const exercisesParsed = JSON.parse(localStorage.getItem(FAVORITES_KEY)) || [];
+  const exercises = Object.keys(exercisesParsed);
   const fragment = document.createDocumentFragment();
   if (exercises.length === 0 && exerciseListEmpty) {
     exerciseListEmpty.classList.remove('visually-hidden');
@@ -19,7 +21,7 @@ function displayExerciseIds() {
     showLoader();
     // Map each exercise ID to a promise that fetches its data
     const exercisePromises = exercises.map((exerciseId) => {
-      return getExerciseById(exerciseId).then((data) => {
+      return getExerciseDetailsById(exerciseId).then((data) => {
         const exercise = data;
         const card = buildExerciseCard(exercise);
         return card;
@@ -56,7 +58,7 @@ function displayExerciseIds() {
 
           romoveButton.addEventListener('click', () => {
             const clickedDataId = romoveButton.getAttribute('data-id');
-            removeExerciseId(clickedDataId);
+            deleteExerciseDetailsById(clickedDataId);
             displayExerciseIds();
           });
         });
