@@ -43,6 +43,8 @@ const closeDetailsModal = () => exerciseRefs.dialog.close();
 const showRatingModal = () => ratingRefs.dialog.showModal();
 const closeRatingModal = () => {
   ratingRefs.dialog.close();
+  ratingRefs.ratingRate.textContent = '0.0';
+  ratingRefs.form.reset();
   showDetailsModal();
 };
 
@@ -62,7 +64,7 @@ const toggleFavouritesOnBtnClick = (exerciseId, selector, isInFavorites) => {
 
   // saveExerciseId(exerciseId);
   saveExerciseDetails(exerciseDetails);
-  target.firstElementChild.textContent = 'Remove from favorites';
+  target.firstElementChild.textContent = 'Remove';
   target.classList.add('is-favourite');
 };
 const toggleFavouritesOnModalOpen = (exerciseId, selector, isInFavorites) => {
@@ -72,7 +74,7 @@ const toggleFavouritesOnModalOpen = (exerciseId, selector, isInFavorites) => {
     target.classList.remove('is-favourite');
     return;
   }
-  target.firstElementChild.textContent = 'Remove from favorites';
+  target.firstElementChild.textContent = 'Remove';
   target.classList.add('is-favourite');
 };
 
@@ -172,8 +174,7 @@ const onRatingFormSubmit = (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const { exsId } = form.dataset;
-  const [, , ratingCustomEl] = form.elements.ratingFormStars.children;
-  const ratingScoreEl = ratingCustomEl.querySelector('.gl-star-rating--stars');
+  const ratingScoreEl = form.querySelector('.gl-star-rating--stars');
   const { rating } = ratingScoreEl.dataset;
   const { ratingEmail, ratingMessage } = form.elements;
 
