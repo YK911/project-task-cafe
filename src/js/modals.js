@@ -186,6 +186,10 @@ const onRatingFormSubmit = (event) => {
 
   ratingRefs.ratingRate.textContent = '0.0';
   form.reset();
+  closeRatingModal();
+  /**
+   * ПЕРЕВІРКА
+   * */
 };
 
 export default async function onExerciseClick(exerciseId) {
