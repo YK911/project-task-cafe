@@ -76,7 +76,6 @@ function displayExerciseIds() {
         const totalPages = Math.ceil(items.length / itemsPerPage);
 
         if (totalPages === 1) {
-          console.log(totalPages);
           document
             .querySelector('.pagination-favorites')
             .classList.remove('display-flex');

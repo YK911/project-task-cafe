@@ -1,4 +1,5 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
 import onExerciseClick from './modals';
 
 import { FAVORITES_KEY } from './config';
@@ -17,7 +18,11 @@ async function getExerciseDetailsById(key) {
 
   // Check if storedData exists
   if (!storedData) {
-    console.log('No data found in local storage');
+    iziToast.error({
+      title: 'Oops',
+      message: 'No data found in local storage',
+      position: 'topRight',
+    });
     return null;
   }
 
@@ -29,7 +34,11 @@ async function getExerciseDetailsById(key) {
 
   // Check if the object exists for the given key
   if (!retrievedObject) {
-    console.log(`No object found for key: ${key}`);
+    iziToast.error({
+      title: 'Oops',
+      message: `No object found for key: ${key}`,
+      position: 'topRight',
+    });
     return null;
   }
 

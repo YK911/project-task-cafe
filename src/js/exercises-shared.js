@@ -2,6 +2,7 @@
  *  It will include resources that are used in exercise cards that are sghared in home and favorites.
  */
 
+import iziToast from 'izitoast';
 import { FAVORITES_KEY } from './config';
 
 // Function to save exercise details to local storage
@@ -31,7 +32,11 @@ function deleteExerciseDetailsById(id) {
 
   // Check if storedData exists
   if (!storedData) {
-    console.log('No data found in local storage');
+    iziToast.error({
+      title: 'Oops',
+      message: 'No data found in local storage',
+      position: 'topRight',
+    });
     return false;
   }
 
@@ -40,7 +45,11 @@ function deleteExerciseDetailsById(id) {
 
   // Check if the object with the given id exists
   if (!parsedData[id]) {
-    console.log(`No object found for id: ${id}`);
+    iziToast.error({
+      title: 'Oops',
+      message: `No object found for id: ${id}`,
+      position: 'topRight',
+    });
     return false;
   }
 

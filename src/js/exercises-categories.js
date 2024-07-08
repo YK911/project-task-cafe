@@ -1,3 +1,4 @@
+import iziToast from 'izitoast';
 import state from './exercises-state';
 import drawExercisesList from './exercises-list';
 import updatePagination from './exercises-pagination';
@@ -46,7 +47,11 @@ async function drawCategoriesList(page = 1) {
   );
 
   if (!container) {
-    console.log('Container not found');
+    iziToast.error({
+      title: 'Oops',
+      message: 'Container not found',
+      position: 'topRight',
+    });
     return;
   }
 

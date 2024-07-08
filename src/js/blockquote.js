@@ -1,5 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
+import iziToast from 'izitoast';
+
 import { BLOCKQUOTE_KEY, DATE_FORMAT } from './config';
 
 function getCurrentDate() {
@@ -44,9 +46,11 @@ async function getBlockQuoteData() {
   const blockQuoteData = await getBlockQuoteData();
 
   if (!blockQuoteData || !blockQuoteData.author || !blockQuoteData.quote) {
-    console.log(
-      `Can't retrieve fresh quote of the day data from provider's API`,
-    );
+    iziToast.error({
+      title: 'Oops',
+      message: `Can't retrieve fresh quote of the day data from provider's API`,
+      position: 'topRight',
+    });
   }
 
   const quoteBlock = document.querySelector('.quote-block');
