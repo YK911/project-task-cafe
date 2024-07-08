@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import StarRating from 'star-rating.js';
 import axios from 'axios';
+import iziToast from 'izitoast';
 import capitalize from './capitalize';
 import { FAVORITES_KEY } from './config';
 import {
@@ -170,7 +171,7 @@ const onRatingBtnClick = () => {
   );
   stars.forEach((star) => star.addEventListener('click', handleUpdateRate));
 };
-const onRatingFormSubmit = (event) => {
+const onRatingFormSubmit = async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const { exsId } = form.dataset;
@@ -178,18 +179,48 @@ const onRatingFormSubmit = (event) => {
   const { rating } = ratingScoreEl.dataset;
   const { ratingEmail, ratingMessage } = form.elements;
 
-  axios.patch(`${exsId}/rating`, {
-    rate: +rating,
-    email: ratingEmail.value,
-    review: ratingMessage.value,
-  });
+  try {
+    await axios.patch(`${exsId}/rating`, {
+      rate: +rating,
+      email: ratingEmail.value,
+      review: ratingMessage.value,
+    });
+    ratingRefs.ratingRate.textContent = '0.0';
+    form.reset();
+    closeRatingModal();
 
-  ratingRefs.ratingRate.textContent = '0.0';
-  form.reset();
-  closeRatingModal();
-  /**
-   * ПЕРЕВІРКА
-   * */
+    iziToast.success({
+      title: 'OK',
+      message: 'Rated!',
+      position: 'topRight',
+    });
+  } catch (err) {
+    if (err.response) {
+      if (err.response.status === 409) {
+        ratingRefs.ratingRate.textContent = '0.0';
+        form.reset();
+        closeRatingModal();
+
+        iziToast.warning({
+          title: 'OK',
+          message: 'You have already rated this.',
+          position: 'topRight',
+        });
+      } else {
+        iziToast.error({
+          title: 'Oops',
+          message: err.response.statusText,
+          position: 'topRight',
+        });
+      }
+    } else {
+      iziToast.error({
+        title: 'Oops',
+        message: err.message,
+        position: 'topRight',
+      });
+    }
+  }
 };
 
 export default async function onExerciseClick(exerciseId) {
