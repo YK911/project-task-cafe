@@ -10,7 +10,7 @@
       <legend class="rating-form-caption">Rating</legend>
       <div class="rating-form-rate">
         <p class="rating-form-value">0.0</p>
-        <select class="rating-form-star">
+        <select class="rating-form-star" required>
           <option value="">Select a rating</option>
           <option value="5">Excellent</option>
           <option value="4">Very Good</option>
@@ -28,15 +28,23 @@
           type="email"
           name="ratingEmail"
           placeholder="&nbsp;"
+          required
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+          title="Please enter a valid email address"
         />
         <span class="rating-form-tag">Email</span>
+        <span class="error-msg">Please enter a valid email address</span>
       </label>
       <label class="rating-form-field">
         <textarea
           class="rating-form-message"
           name="ratingMessage"
           placeholder="Your comment"
+          required
+          minlength="7"
+          title="Comment must be 7 chars long"
         ></textarea>
+        <span class="error-msg">Comment must be 7 chars long</span>
       </label>
     </fieldset>
     <button class="modal-btn filled rating-form-btn" type="submit">Send</button>

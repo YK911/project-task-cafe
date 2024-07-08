@@ -18,7 +18,6 @@ const ratingOptions = {
   starSize: 18,
   maxStars: 5,
   tooltip: false,
-  clearable: false,
   stars: (el) => {
     const star = el;
     star.innerHTML =
