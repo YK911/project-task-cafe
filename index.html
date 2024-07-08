@@ -4,10 +4,10 @@
     <link rel="icon" type="image/svg+xml" href="/project-task-cafe/assets/favicon-Cpwlvc8J.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YOUR ENERGY | Home page</title>
-    <script type="module" crossorigin src="/project-task-cafe/assets/vendor-CQfgqUzU.js"></script>
-    <script type="module" crossorigin src="/project-task-cafe/assets/main-Zlx1CzJa.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-DDh1Dq93.css">
-    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-pbv_zplY.css">
+    <script type="module" crossorigin src="/project-task-cafe/assets/vendor-BZku-XQG.js"></script>
+    <script type="module" crossorigin src="/project-task-cafe/assets/main-BPg_QWX2.js"></script>
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/main-OqvtdeWv.css">
+    <link rel="stylesheet" crossorigin href="/project-task-cafe/assets/vendor-BnJFAMEc.css">
   </head>
   <body class="homepage">
     <header class="header">
@@ -440,68 +440,7 @@
     </svg>
   </button>
 
-  <div class="modal-body">
-    <!-- <div class="modal-ill">
-      <img
-        src="./assets/images/exercises/img-1.jpg"
-        alt="Exercise animated image"
-        width="295"
-        height="258"
-        loading="lazy"
-      />
-    </div>
-    <div class="modal-details">
-      <h2 class="modal-caption">Air bake</h2>
-      <div class="modal-rating">
-        <p>4.0</p>
-        <svg width="98" height="13" id="rating-stars">
-          <use style="--shift: -2" href="./assets/icons.svg#star"></use>
-          <use style="--shift: -1" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 0" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 1" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 2" href="./assets/icons.svg#star"></use>
-        </svg>
-      </div>
-      <div class="modal-rating">
-        <p>4.0</p>
-        <svg width="98" height="13" id="rating-stars">
-          <use style="--shift: -2" href="./assets/icons.svg#star"></use>
-          <use style="--shift: -1" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 0" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 1" href="./assets/icons.svg#star"></use>
-          <use style="--shift: 2" href="./assets/icons.svg#star"></use>
-        </svg>
-      </div>
-      <ul class="modal-meta">
-        <li>
-          <h3 class="modal-meta-caption">Target</h3>
-          <p class="modal-meta-info">Abs</p>
-        </li>
-        <li>
-          <h3 class="modal-meta-caption">Body Part</h3>
-          <p class="modal-meta-info">Waist</p>
-        </li>
-        <li>
-          <h3 class="modal-meta-caption">Equipment</h3>
-          <p class="modal-meta-info">Body weight</p>
-        </li>
-        <li>
-          <h3 class="modal-meta-caption">Popular</h3>
-          <p class="modal-meta-info">150</p>
-        </li>
-        <li>
-          <h3 class="modal-meta-caption">Burned Calories</h3>
-          <p class="modal-meta-info">323/3 min</p>
-        </li>
-      </ul>
-      <p class="modal-desc">
-        This refers to your core muscles, which include the rectus abdominis,
-        obliques, and transverse abdominis. They're essential for maintaining
-        posture, stability, and generating force in many movements. Exercises
-        that target the abs include crunches, leg raises, and planks.
-      </p>
-    </div> -->
-  </div>
+  <div class="modal-body"></div>
 
   <div class="modal-controls">
     <button class="modal-btn filled" type="button" data-add-favourites>
@@ -512,41 +451,34 @@
       </svg>
     </button>
     <!-- Disable rating btn -->
-    <!-- <button class="modal-btn" type="button" data-rating-open>
+    <button class="modal-btn" type="button" data-rating-open>
       Give a rating
-    </button> -->
+    </button>
   </div>
 </dialog>
 
 
     <dialog class="modal" data-modal="rating">
-  <button class="modal-close-btn" type="button" data-modal-close>
+  <button class="modal-close-btn" type="button" data-modal-close="rating">
     <svg class="modal-btn-icon" width="24" height="24">
       <use href="/project-task-cafe/assets/icons-BsQyx0QM.svg#x-mark"></use>
     </svg>
   </button>
 
   <form class="modal-rating-form rating-form" name="ratingForm">
-    <fieldset class="rating-form-controls">
+    <fieldset class="rating-form-controls" name="ratingFormStars">
       <legend class="rating-form-caption">Rating</legend>
-      <p class="rating-form-value">4.0</p>
-      <label class="rating-form-range">
-        <input
-          type="range"
-          name="ratingRange"
-          value="0"
-          min="0"
-          max="5"
-          step="0.1"
-        />
-        <svg width="98" height="13" id="rating-stars">
-          <use style="--shift: -2" href="/project-task-cafe/assets/icons-BsQyx0QM.svg#star"></use>
-          <use style="--shift: -1" href="/project-task-cafe/assets/icons-BsQyx0QM.svg#star"></use>
-          <use style="--shift: 0" href="/project-task-cafe/assets/icons-BsQyx0QM.svg#star"></use>
-          <use style="--shift: 1" href="/project-task-cafe/assets/icons-BsQyx0QM.svg#star"></use>
-          <use style="--shift: 2" href="/project-task-cafe/assets/icons-BsQyx0QM.svg#star"></use>
-        </svg>
-      </label>
+      <div class="rating-form-rate">
+        <p class="rating-form-value">0.0</p>
+        <select class="rating-form-star">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
     </fieldset>
     <fieldset class="rating-form-info">
       <legend class="visually-hidden">Rating form information</legend>
