@@ -125,11 +125,17 @@
   color: rgb(var(--cl-primary-light) / 60%);
 }
 .modal-controls {
-  grid-area: controls;
-
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
+
+  @media only screen and (min-width: 768px) {
+    max-width: 338px;
+    flex-direction: row;
+    gap: 7px;
+
+    margin-left: auto;
+  }
 
   .modal.favorites & {
     display: none;
@@ -151,8 +157,9 @@
   @media only screen and (max-width: 767px) {
     margin-right: auto;
   }
+
   @media only screen and (min-width: 768px) {
-    max-width: 338px;
+    font-size: 16px;
   }
 
   &.filled {
