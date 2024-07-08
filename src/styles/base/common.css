@@ -33,5 +33,5 @@ svg {
 }
 
 button {
-  cursor: pointer;
+  cursor: pointer !important;
 }
