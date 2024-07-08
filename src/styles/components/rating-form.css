@@ -1,4 +1,5 @@
-.modal-rating-form {
+.modal[data-modal='rating'] {
+  max-width: 430px;
 }
 .rating-form {
   --gl-star-color: #eea10c;
@@ -74,6 +75,13 @@
   line-height: 1.5;
   color: rgb(var(--cl-primary-light));
   border: 1px solid rgb(var(--cl-primary-light));
+
+  &:not(:placeholder-shown):required:invalid {
+    border-color: rgb(225, 44, 44);
+  }
+  &:not(:placeholder-shown):required:valid {
+    border-color: rgb(102, 171, 102);
+  }
 }
 .rating-form-input {
   height: 50px;
@@ -103,6 +111,24 @@
     color: rgb(var(--cl-primary-light) / 60%);
   }
 }
+.error-msg {
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+
+  font-size: 11px;
+  color: rgb(225, 44, 44);
+
+  opacity: 0;
+  transition: 300ms ease;
+  transition-property: opacity;
+
+  .rating-form-input:not(:placeholder-shown):invalid ~ &,
+  .rating-form-message:not(:placeholder-shown):invalid ~ & {
+    opacity: 1;
+  }
+}
 .rating-form-btn {
-  width: 100%;
+  max-width: 100%;
 }
